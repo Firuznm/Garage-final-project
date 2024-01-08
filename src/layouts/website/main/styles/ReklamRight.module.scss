@@ -1,0 +1,10 @@
+.reklamRight{
+	position: fixed;
+	top: 0;
+	// right: 0;
+	z-index: 9999;
+	background-color: rgb(120, 250, 14);
+	width: 200px;
+	height: 100vh;
+	// width: calc((100% - 1500px) / 2);
+}   

@@ -1,0 +1,53 @@
+.header{
+	background-color: black;
+	color:  white;
+	font-family: normalOpenFont;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	// width: 70%;
+	// margin: 0 auto;
+		.nav{
+			height: 100px;
+			transition:  all .5s;
+            padding: 0 10px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.hamburgerMenu{
+				display: none;
+			}
+			.navLogo{
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+			  }
+				
+			}
+		
+		.header{	.navBlack{
+				background-color: black;
+				height: 80px;
+		}
+			}
+
+
+// ====  Header  ===== section responsive start
+@media only screen and (max-width: 900px) {
+	.header{
+		background-color: black;
+		.nav{
+			.hamburgerMenu{
+				display: block;
+				font-size: 28px;
+				cursor: pointer;
+				margin-top: 10px;
+			}
+			  }
+				}
+				.navBlack{
+					height: 100px;
+				}
+}

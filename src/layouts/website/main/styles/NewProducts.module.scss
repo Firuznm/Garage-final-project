@@ -1,0 +1,41 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#newProducts{
+	// background-color: $new-products-section-bg-color;
+	    // height: auto;
+		.wrapperNewProducts{
+			padding: 50px 10px 30px;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+			gap: 2rem;
+		} 
+		.allProductBtn{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 180px;
+		margin: 0 auto;
+		background-color: #eb9d37;
+		padding: 10px;
+		margin-bottom: 40px;
+	   font-family: normalOpenFont;
+       font-weight: 700;
+	   font-size: 14px;
+	   border-radius: 7px;
+	   transition: .5s;
+	   &:hover{
+		background-color: green;
+	   }
+		}
+	}
+
+// ==== newProducts ===== section responsive start
+@media only screen and (max-width: 900px) {
+	#newProducts{
+			.wrapperNewProducts{
+				padding: 25px 0;
+				grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+			    gap: 1rem;
+			} 
+		}   
+}

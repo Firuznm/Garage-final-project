@@ -1,0 +1,56 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+.titleList{
+	text-align: center;
+	.yellowTitle{
+		font-family: veryItalicFont;
+		color:$title-list-yellow-color;
+		font-weight: 400;
+		font-size: 50px;
+		letter-spacing: 3px;
+	}
+	.whiteTitle{
+		font-family: lessItalicMetaFont;
+		font-size: 48px;
+		font-weight: 400;
+		color: $title-list-white-color;
+	}
+	.xWrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.Xlogo{
+			font-family: normalOpenFont;
+			color: $title-list-x-logo-color;
+			font-size: 20px;
+			margin: 0 7px 4px 7px;
+		}
+		.leftLine{
+			   display: inline-block;
+				width: 20px;
+				height: 1px;
+				background-color: white;
+			}
+			.rightLine{
+				display: inline-block;
+				width: 20px;
+				height: 1px;
+				background-color: white;
+			}
+	}
+	}
+	
+  
+
+// ====  titleList ===== component responsive start
+@media only screen and (max-width: 900px) {
+	.titleList{
+		.yellowTitle{
+			font-size: 30px;
+			letter-spacing: 3px;
+		}
+		.whiteTitle{
+			font-size: 25px;
+		}
+	}
+}

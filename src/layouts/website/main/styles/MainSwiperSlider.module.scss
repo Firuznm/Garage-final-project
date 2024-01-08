@@ -1,0 +1,89 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+
+	#MainSwiperSlider{
+		width: 100%;
+		margin-top: -100px;
+		display: flex;
+		// background-color:$main-section-bg-color;
+		
+		img{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;       
+		   }
+			.mainSwiperSliderText{
+				position: absolute;   
+				top: 20%;    
+				left: 8%;
+				width: 700px;
+				color: white;
+			
+				.sliderBrandTitle{
+				  font-family: veryItalicFont;
+				 color:$main-slider-title-veryitalic-color;
+				 font-weight: 400;
+				 font-size: 55px;
+				 letter-spacing: 3px;
+				}
+				.sliderTitle{
+				font-family: lessItalicMetaFont;
+				font-size: 65px;
+				font-weight: 400;
+				margin: 1.4rem 0 1rem;
+				}
+				.sliderDescription{
+					font-family: normalOpenFont;
+					margin-bottom: 1rem;
+					font-size: 25px;
+				}
+			}   
+
+
+	}
+	
+
+
+
+// ====  MainSwiperSlider  ===== section responsive start
+@media only screen and (max-width: 900px) {
+	#MainSwiperSlider{
+		margin-top: 0;
+			.mainSwiperSliderText{
+				width: 100%;
+				.sliderBrandTitle{
+				 font-size: 33px;
+				}
+				.sliderTitle{
+				font-size: 33px;
+				margin: .7rem 0 1rem;
+				}
+				.sliderDescription{
+					font-size: 17px;
+					width: 80%;
+				}
+			}   
+		
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	#MainSwiperSlider{
+			.mainSwiperSliderText{
+				top: 5%;    
+				left: 14%;
+				.sliderBrandTitle{
+				 font-size: 20px;
+				}
+				.sliderTitle{
+				font-size: 18px;
+				margin: 5px 0;
+				}
+				.sliderDescription{
+					font-size: 14px;
+					width: 85%;
+				}
+			}   
+		
+	}
+}

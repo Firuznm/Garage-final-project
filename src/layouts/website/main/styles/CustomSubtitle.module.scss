@@ -1,0 +1,85 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#costumSubtitle{
+	// background-color: $custom-subtitle-bg-color;
+		.subtitleSlider{
+			width: 100%;
+			margin: 0 auto;
+			.sliderConten{
+				margin-top: 30px;    
+				height: 370px;
+				overflow: hidden;
+				cursor: pointer;
+				position: relative;
+				img{
+					width: 100%;
+				    height: 85%;
+					transition: all .5s;
+				}
+				&:hover img{
+					transform: scale(1.1);
+					transition: all .5s;
+				}
+				.sliderContent{
+					position: absolute;
+					top: 14%;
+					left: 55px;
+					.contentTitle{
+                     color: $custom-slider-content-title-color;
+					 font-family: veryItalicFont;
+					 font-size: 40px;
+					 font-weight: 100;
+					}
+					.productTitle{
+                        color: $custom-slider-product-title-color;
+						font-family: lessItalicMetaFont;
+						font-size: 28px;
+						font-weight: 300;
+						margin: 10px 0;
+					}
+					.priceBtn{
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						gap: 15px;
+					.productPrice{
+                        color: $custom-slider-product-price-color;
+                        font-size: 40px;
+						margin-right: 20px;
+					}
+				}
+				}
+			}
+		}
+	}
+
+
+// ==== costumSubtitle  ===== section responsive start
+@media only screen and (max-width: 540px) {
+	#costumSubtitle{
+			.subtitleSlider{
+				.sliderConten{
+					height: 210px;
+					img{
+						height: 80%;
+					}
+					.sliderContent{
+						top: 10%;
+						left: 30px;
+						.contentTitle{
+						 font-size: 30px;
+						}
+						.productTitle{
+							font-size: 25px;
+							margin: 5px 0;
+						}
+						.priceBtn{
+						.productPrice{
+							font-size: 20px;
+						}
+					}
+					}
+				}
+			}
+		}
+}

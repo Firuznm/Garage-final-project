@@ -1,0 +1,61 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#ClientsOpinions{
+	// background-color: $ClientsOpinions-section-bg-color;
+		.TitleWrapper{
+			position: relative;
+			.testimonials{
+				font-size: 80px;
+				font-weight: 200;
+			   color: $ClientsOpinions-section-testimonials-color;
+				position: absolute;
+				top:38%	;
+				left: 50%;
+				transform: translate(-50%,-50%);	
+			}
+		}
+		.clientsWrapper{
+			margin-top: 50px;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+			gap: 2rem;
+		.clientInfo{
+			text-align: center;
+			font-family: normalOpenFont;
+			.clientImg{
+				width: 140px;
+				height: 140px;
+				object-fit: cover;
+				border-radius: 100%;
+			}
+			.clientDescription{
+				font-size: 18px;
+				margin: 14px 0;
+				color: $ClientsOpinions-section-clientDescription-color;
+			}
+			.clientName{
+				font-size: 18px;
+				font-weight: 700;
+				color: $ClientsOpinions-section-clientNameCommet-color;
+			}
+			.clientCommet{
+				font-size: 18px;
+			     margin-left: 5px;
+				 color: $ClientsOpinions-section-clientNameCommet-color;
+			}
+		}
+	}
+	}
+
+	// ====  ClientsOpinions  ===== component responsive start
+@media only screen and (max-width: 900px) {
+	#ClientsOpinions{
+			.TitleWrapper{
+				position: relative;
+				.testimonials{
+					font-size: 38px;
+				}
+			}
+		}
+	
+}

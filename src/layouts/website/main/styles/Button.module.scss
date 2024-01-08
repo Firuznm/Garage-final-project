@@ -1,0 +1,24 @@
+.btn{
+    padding: 12px 27px 12px 27px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-family: normalOpenFont;
+    cursor: pointer;
+    display: inline-block;
+	&:hover{
+		background-color: white;
+		color: rgb(125, 121, 121);
+		transition: all 0.5s;
+	}
+}
+
+
+// ====  Button  ===== component responsive start
+@media only screen and (max-width: 900px) {
+    .btn{
+        padding: 5px 12px 5px 12px;
+        font-size: 12px;
+    }
+}

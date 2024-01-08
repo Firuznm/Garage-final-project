@@ -1,0 +1,104 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#saveSale{
+	.wrapperSaveSale{
+		background-image: url("../../../../assets/images/saveSaleBgImg.webp");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+      .content{
+		height: 90vh;
+	    display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color:  $saveSale-write-color;
+		.italicTitle{
+			font-family: veryItalicFont;
+			font-size: 85px;
+            font-weight: 200;
+		}
+		.title{
+            font-family: lessItalicMetaFont;
+			font-size: 85px;
+			font-weight: 200;
+		}
+		.description{
+			font-family: normalOpenFont;
+			font-size: 20px;
+			margin:15px 0 44px;
+		}
+		.signUp{
+		   display: flex;
+           margin: 15px 0;
+		   color: $signUp-color;
+		 .inp{
+			font-size: 20px;
+			border-bottom: 3px solid $signUp-color;
+			width: 450px;
+			display: flex;
+		    align-items: center;
+		   .email{
+			background-color: transparent;
+			border: none;
+			outline: none;
+			color: $signUp-input-color;
+			padding: 0 10px;
+			font-size: 18px;
+			font-family: normalOpenFont;
+		   }
+		}
+		   .signUpBtn{
+			background-color: $signUp-btn-bg-color;
+			color: $signUp-btn-color;
+			font-size: 17px;
+			padding: 18px 65px;
+			margin-left: 14px;
+			border: none;
+			cursor: pointer;
+			font-family: normalOpenFont;
+		   }
+		}
+
+	  }
+	}
+}
+// ==== saveSale ===== section responsive start
+@media only screen and (max-width: 900px) {
+	#saveSale{
+		.wrapperSaveSale{
+		background-position: right;
+		  .content{
+			height: 70vh;
+			.italicTitle{
+				font-size: 40px;
+			}
+			.title{
+				font-size: 35px;
+				text-align: center;
+			}
+			.description{
+				font-size: 15px;
+				margin:15px 0 24px;
+				text-align: center;
+			}
+			.signUp{
+			 .inp{
+				font-size: 20px;
+				width: 200px;
+			   .email{
+				font-size: 18px;
+			   }
+			}
+			   .signUpBtn{
+				font-size: 14px;
+				padding: 5px 12px;
+				margin-left: 8px;
+			   }
+			}
+	
+		  }
+		}
+}
+}

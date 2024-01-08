@@ -1,0 +1,22 @@
+.close{
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	  .lineIcon{
+		color: white;
+		font-size: 24px;
+	  }
+	  .closeIcon{
+		color: white;
+		font-size: 24px;
+		display: none;
+	  }
+	  &:hover .closeIcon{
+		display: block;
+	  }
+	 &:hover .lineIcon{
+		display: none;
+	  }
+
+
+}

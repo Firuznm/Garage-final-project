@@ -1,0 +1,131 @@
+#details{
+	.prDetails{
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		img{
+		    width: 30%;
+			aspect-ratio: 1/1.3;
+			object-fit: cover;
+			border: 1px solid red;
+			border-radius: 14px;
+		}
+		.prInfo{
+			width: 50%;
+			color: white;
+			.prTitle{
+              font-size: 2rem;
+			  font-family: normalOpenFont;
+			}
+			.stars{
+				margin: 14px 0;
+             svg{
+				color: #eb9d37;
+				margin: 0 2px;
+			 }
+			}
+			.prPrice{
+				font-size: 30px;
+				margin: 10px 0 ;
+				display: block;
+			}
+			.prDescription{
+			 font-size: 17px;
+			}
+			.addToCartBtn,
+			.buyItNow{
+				background-color: transparent;
+				border: none;
+				font-size: 16px;
+				color: white;
+				display: block;
+				padding: 16px 0;
+				font-weight: 700;
+				text-align: center;
+				width: 100%;
+				margin-top: 27px;
+				cursor: pointer;
+				transition: .5s;
+			}
+			.addToCartBtn {
+			background-color: #333;
+			&:hover{
+				background-color:green}
+			}
+			.buyItNow{
+				background-color: #eb9d37;
+				&:hover{
+					background-color: green;
+				}
+			}
+		}
+	}
+}
+
+
+// ====  Details  ===== section responsive start
+@media only screen and (max-width: 900px) {
+	#details{
+		.prDetails{
+		    flex-direction: column;
+			img{
+				width: 100%;
+				// aspect-ratio: 1/1.3;
+				// object-fit: cover;
+				// border: 1px solid red;
+				// border-radius: 14px;
+			}
+			.prInfo{
+				width: 100%;
+				text-align: center;
+				// color: white;
+				// .prTitle{
+				//   font-size: 2rem;
+				//   font-family: normalOpenFont;
+				// }
+				// .stars{
+				// 	margin: 14px 0;
+				//  svg{
+				// 	color: #eb9d37;
+				// 	margin: 0 2px;
+				//  }
+				// }
+				// .prPrice{
+				// 	font-size: 30px;
+				// 	margin: 10px 0 ;
+				// 	display: block;
+				// }
+				// .prDescription{
+				//  font-size: 17px;
+				// }
+				// .addToCartBtn,
+				// .buyItNow{
+				// 	background-color: transparent;
+				// 	border: none;
+				// 	font-size: 16px;
+				// 	color: white;
+				// 	display: block;
+				// 	padding: 16px 0;
+				// 	font-weight: 700;
+				// 	text-align: center;
+				// 	width: 100%;
+				// 	margin-top: 27px;
+				// 	cursor: pointer;
+				// 	transition: .5s;
+				// }
+				// .addToCartBtn {
+				// background-color: #333;
+				// &:hover{
+				// 	background-color:green}
+				// }
+				// .buyItNow{
+				// 	background-color: #eb9d37;
+				// 	&:hover{
+				// 		background-color: green;
+				// 	}
+				// }
+			}
+		}
+	}
+}

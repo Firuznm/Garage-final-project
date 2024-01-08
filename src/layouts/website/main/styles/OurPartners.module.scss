@@ -1,0 +1,56 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#OurPartners{
+	// background-color: $OurPartners-section-bg-color;
+		.partnersWrapper{
+			display: flex;
+			gap: 2rem;
+			.partnersImg{
+				width: 47%;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+			    gap: 1rem;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			.partnersInfo{
+				width: 47%;
+				text-align: center;
+				color: white;
+				.description{
+					margin: 33px 0;
+					font-size: 19px;
+					font-family: normalOpenFont;
+				}
+				.partnersBtn{
+					display: inline-block;
+					padding: 15px 25px;
+					font-family: normalOpenFont;
+					font-size: 20px;
+					background-color: $OurPartners-section-btn-bg-color;
+					transition: .3s;
+				&:hover{
+					background-color: $OurPartners-section-btn-hover-bg-color;
+				}
+				}
+			}
+		}
+	}
+
+// ==== OurPartners ===== section responsive start
+@media only screen and (max-width: 1340px) {
+	#OurPartners{
+			.partnersWrapper{
+				flex-wrap: wrap-reverse;
+				.partnersImg{
+					width: 100%;
+				}
+				.partnersInfo{
+					width: 100%;
+				}
+			}
+		}
+}

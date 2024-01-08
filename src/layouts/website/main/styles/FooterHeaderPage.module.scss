@@ -1,0 +1,41 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+.FooterHeaderPageWrapper{
+	.header{
+		margin: 10px 0 30px;
+		font-size: 21px;
+		font-weight: 700;
+		color: $Footer-title-color;
+		
+	}
+	.page{
+		display: block;
+		font-size: 17px;
+		margin: 7px 0;
+		color: $Footer-pages-color;
+		transition: .3s ease;
+		&:hover{
+			color: $Footer-hover-color;
+		}
+	}
+}
+
+
+// ====  FooterHeaderPage   ===== section responsive start
+@media only screen and (max-width: 900px) {
+	.FooterHeaderPageWrapper{
+		.header{
+			margin: 5px 0;
+			font-size: 18px;
+			font-family: lessItalicLoraFont;
+		}
+	
+		.page{
+			font-size: 14px;
+			font-weight: 300;
+			margin: 2px 0;
+		}
+	
+	}
+	
+}

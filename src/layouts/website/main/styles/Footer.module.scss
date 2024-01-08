@@ -1,0 +1,110 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#footer{
+	// background-color:$Footer-bg-color;
+	font-family: normalOpenFont;
+	// .container{
+		// max-width: 1500px;
+		// margin: 0 auto;
+		// padding: 105px 0 40px; 
+		
+		.footerWrapper{
+		display: flex;
+		padding: 0 10px;
+		.footerPages{    
+			width: 75%;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+			gap: 1rem;
+		}
+		.footerStore{
+			width: 30%;
+		.header{
+			margin: 10px 0 30px;
+			font-size: 21px;
+			font-weight: 700;
+			color: $Footer-title-color;
+		}	
+		.description
+		{
+			font-size: 18px;
+			color: $Footer-store-color;
+			transition: .3s ease;
+			&:hover{
+				color: $Footer-hover-color;
+			}
+		}
+		 .address{
+			display: block;
+			font-size: 18px;
+			margin: 25px 0 5px 0;
+		   color: $Footer-pages-color;
+		   transition: .3s ease;
+		   &:hover{
+			   color: $Footer-hover-color;
+		   }
+		}
+		.contact{color: $Footer-pages-color;
+			transition: .3s ease;
+			&:hover{
+				color: $Footer-hover-color;
+			}
+		}
+		.PaymentCards{
+		display: block;
+		margin-top: 45px;
+		}
+		}	
+		}
+	}
+
+// ====  footer  ===== component responsive start
+@media only screen and (max-width: 900px) {
+	#footer{
+			.footerWrapper{
+				flex-wrap: wrap;
+			.footerPages{    
+				width: 100%;
+				grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+			}
+			.footerStore{
+				width: 100%;
+			// .header{
+			// 	margin: 10px 0 30px;
+			// 	font-size: 21px;
+			// 	font-weight: 700;
+			// 	color: $Footer-title-color;
+			// }	
+			// .description
+			// {
+			// 	font-size: 18px;
+			// 	color: $Footer-store-color;
+			// 	transition: .3s ease;
+			// 	&:hover{
+			// 		color: $Footer-hover-color;
+			// 	}
+			// }
+			//  .address{
+			// 	display: block;
+			// 	font-size: 18px;
+			// 	margin: 25px 0 5px 0;
+			//    color: $Footer-pages-color;
+			//    transition: .3s ease;
+			//    &:hover{
+			// 	   color: $Footer-hover-color;
+			//    }
+			// }
+			// .contact{color: $Footer-pages-color;
+			// 	transition: .3s ease;
+			// 	&:hover{
+			// 		color: $Footer-hover-color;
+			// 	}
+			// }
+			// .PaymentCards{
+			// display: block;
+			// margin-top: 45px;
+			// }
+			}	
+			}
+		}
+}

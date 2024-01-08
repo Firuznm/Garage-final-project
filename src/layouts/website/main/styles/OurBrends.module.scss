@@ -1,0 +1,38 @@
+@import "../../../../colorsUsedSite/allColors.scss";
+
+#OurBrends{
+	background-color: $OurBrends-section-bg-color;
+	color: $OurBrends-section-color;
+	// .container{
+		// max-width: 1500px;
+		// width: 95%;
+		// margin: 0 auto;
+		// padding: 30px 0 40px; 
+		.OurBrendsWrapper{
+         display: flex;
+		 justify-content: space-between;
+		 align-items: center;
+		 font-size: 40px;
+		 padding: 33px 0;
+		 font-family: normalOpenFont;
+		 .title{
+			width: 20%;
+			font-size: 40px;
+			font-weight: 100;
+            font-family: lessItalicMetaFont;
+		 }
+		 .brendsLine{
+			width: 1px;
+			height: 70px;
+			background-color: $OurBrends-section-brendsLine-bg-color;
+			border: none;
+		 }
+		 .mySwiper{
+			width: 80%;
+			text-align: end;
+			font-family: normalOpenFont;
+		
+		 }
+		}
+	}
+// }

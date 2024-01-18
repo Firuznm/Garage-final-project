@@ -20,7 +20,9 @@ function NewProducts() {
 				}
                  
 			</div>
+			<div className={style.allProduct}>
 			<Link className={style.allProductBtn} to={"/products"}>SEE ALL PRODUCT</Link>
+			</div>
 		</div>
 	  
 	</section>

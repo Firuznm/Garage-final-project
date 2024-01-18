@@ -1,13 +1,11 @@
 .header{
-	background-color: black;
+	// background-color: black;
 	color:  white;
 	font-family: normalOpenFont;
 	position: sticky;
 	top: 0;
 	left: 0;
 	z-index: 999;
-	// width: 70%;
-	// margin: 0 auto;
 		.nav{
 			height: 100px;
 			transition:  all .5s;
@@ -27,10 +25,11 @@
 				
 			}
 		
-		.header{	.navBlack{
-				background-color: black;
+		.header{	
+			.navBlack{
+				// background-color: black;
 				height: 80px;
-		}
+	          	}
 			}
 
 

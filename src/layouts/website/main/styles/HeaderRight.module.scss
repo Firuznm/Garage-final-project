@@ -22,11 +22,24 @@
 	  font-size: 28px;
 	  cursor: pointer;
 	}
-  
+  .wishList{
+	position: relative;
+	cursor: pointer;
 	.heartIcon {
-	  font-size: 20px;
-	  cursor: pointer;
-	}
+		font-size: 20px;
+		cursor: pointer;
+	  }
+	  .wishListCount{
+		position: absolute;
+		top: -12px;
+		left: 12px;
+		padding: 0px 6px;
+		background-color: red;
+		border-radius: 100%;
+		font-weight: 700;
+	  }
+  }
+
   
 	.navBasket {
 	  display: flex;
@@ -164,7 +177,37 @@
 	  background-color: #111;
 	  padding: 1rem  2rem;
 	  height: 100vh;
-	 
+	   .basketWrapper{
+       display: flex;
+	   justify-content: space-between;
+	//    align-items: center;
+	   margin: 20px 0;
+	   img{
+		width: 70px;
+		height: 80px;
+		object-fit: cover;
+		border-radius: 7px;
+	   }
+	   .basketContent{
+		text-align: center;
+
+		.basketTitle{
+			font-size: 14px;
+			font-weight: 500;
+		}
+		.basketPrice{
+         display: inline-block;
+		 margin-top: 10px;
+		}
+		
+
+	   }
+	   .delete{
+		display: inline-block;
+		margin-top: 20px;
+		cursor: pointer;
+	   }
+	   }
 	}
   }
   }

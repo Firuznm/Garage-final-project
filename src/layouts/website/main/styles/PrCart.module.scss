@@ -24,9 +24,11 @@
 			justify-content: space-evenly;
 			font-size: 30px;
 			color: white;
-			// .searchIcon{
-			// 	margin: 0 40px;
-			// }
+			.searchIcon,
+			.heartIcon,
+			.basketIcon{
+				cursor: pointer;
+			}
 		}
 	
 	.prInfo{

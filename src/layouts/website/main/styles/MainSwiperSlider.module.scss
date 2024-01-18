@@ -4,43 +4,72 @@
 	#MainSwiperSlider{
 		width: 100%;
 		margin-top: -100px;
-		display: flex;
+		// display: flex;
 		// background-color:$main-section-bg-color;
-		
-		img{
-			height: 100%;
-			width: 100%;
-			object-fit: cover;       
+		// .wrp{
+		// 	display: flex;
+		// 	width: 100%;   
+		// 	position: relative;
+		// .left{
+		// 	width: 200px;
+		// 	height: 100vh;
+		// 	color: white;
+		// 	// position: fixed;
+		// 	position: sticky;
+		//     // left: 0;
+		// 	top: 80px;
+		// 	z-index: 9999;
+		// 	background-color: red;
+		//    }
+		//    .slider{
+		// 	width: calc(100% - 400px);
+			img{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;       
+			   }
+				.mainSwiperSliderText{
+					position: absolute;   
+					top: 20%;    
+					left: 8%;
+					width: 700px;
+					color: white;
+				
+					.sliderBrandTitle{
+					  font-family: veryItalicFont;
+					 color:$main-slider-title-veryitalic-color;
+					 font-weight: 400;
+					 font-size: 55px;
+					 letter-spacing: 3px;
+					}
+					.sliderTitle{
+					font-family: lessItalicMetaFont;
+					font-size: 65px;
+					font-weight: 400;
+					margin: 1.4rem 0 1rem;
+					}
+					.sliderDescription{
+						font-family: normalOpenFont;
+						margin-bottom: 1rem;
+						font-size: 25px;
+					}
+				} 
 		   }
-			.mainSwiperSliderText{
-				position: absolute;   
-				top: 20%;    
-				left: 8%;
-				width: 700px;
-				color: white;
-			
-				.sliderBrandTitle{
-				  font-family: veryItalicFont;
-				 color:$main-slider-title-veryitalic-color;
-				 font-weight: 400;
-				 font-size: 55px;
-				 letter-spacing: 3px;
-				}
-				.sliderTitle{
-				font-family: lessItalicMetaFont;
-				font-size: 65px;
-				font-weight: 400;
-				margin: 1.4rem 0 1rem;
-				}
-				.sliderDescription{
-					font-family: normalOpenFont;
-					margin-bottom: 1rem;
-					font-size: 25px;
-				}
-			}   
+	  
+        //   .right{
+		// width: 200px;
+		// height: 100vh;
+		// color: white;
+		// // position: fixed;
+		// position: sticky;
+		// top: 80px;
+		// z-index: 9999;
+        // background-color: yellow;
+		// right: 0;
+        //  }
+		// }
 
-
-	}
+       	// }
 	
 
 

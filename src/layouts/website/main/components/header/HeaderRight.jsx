@@ -2,21 +2,28 @@
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import { SlBasket } from "react-icons/sl";
+import { FaRegTrashAlt } from "react-icons/fa";
 import { MdOutlinePersonOutline } from "react-icons/md";
 // import style
 import style from  "../../styles/HeaderRight.module.scss"
 import { useState } from "react";
 import HeaderClose from "./HeaderClose";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { BasketContext } from "../../../../../Contexts/BasketContext";
+import { WishListContext } from "../../../../../Contexts/WishList";
 
 export default function HeaderRight() {
-	const [headerLogin, setHeaderLogin]=useState(false)
+	const { BasketItems, getBasketTotal,removeFromBasket }=useContext(BasketContext)
 	const [searchOpenClose, setSearchOpenClose]=useState(false)
 	const [basketOpenClose,setBasketOpenClose]=useState(false)
-	
-	const openCloseLogin=()=>{
-		setHeaderLogin(!headerLogin)
-		
-	}
+    const {WishList}=useContext(WishListContext)
+
+
+	// console.log("wish",WishList);
+
+	console.log("hed",BasketItems);  
+
     const openCloseSearch=()=>{
 		setSearchOpenClose(!searchOpenClose)
 	}
@@ -26,38 +33,23 @@ export default function HeaderRight() {
 	 
   return (
 	<div className={style.navRight}>
-	<button onClick={openCloseLogin}  className={style.loginRegisterBtn}>
+	<Link  to={"/login"}
+	  className={style.loginRegisterBtn}>
 	 <span className={style.loginRegister}>	Login / Register</span>
 		<MdOutlinePersonOutline  className={style.person}/>
- </button>
+ </Link>
 	<IoIosSearch onClick={openCloseSearch} className={style.searchIcon} />
-	<FaRegHeart className={style.heartIcon} />
+
+	<span className={style.wishList}>
+	<FaRegHeart  className={style.heartIcon} /> 
+	 <span className={style.wishListCount}>{WishList.length}</span>
+	</span>
 
 	<div onClick={openCloseBasket}  className={style.navBasket}>
 	<SlBasket  className={style.BasketIcon}/>
-	<span className={style.count}>0</span> 
+	<span className={style.count}>{BasketItems.length}</span> 
 	<span className={style.line}>/</span>
-	<span className={style.price}>0.00 $</span>
-	</div>
-
-	<div className={`${style.login} ${headerLogin ? style.open : ""}`}>
-		<div className={style.loginHead}>
-			<h3>SIGN IN</h3>
-			<div onClick= {openCloseLogin}>
-			<HeaderClose />
-			</div>
-		</div>
-
-		<form className={style.loginForm}>
-     
-	     <label htmlFor="email">Email address *</label>
-		 <input type="email" id="email" />
-
-		 <label htmlFor="password">Password *</label>
-		 <input type="password" id="password" />
-
-		 <button className={style.loginBtn}>LOGIN</button>
-		</form>
+	<span className={style.price}>{getBasketTotal()} $</span>
 	</div>
 
 	<div className={`${style.searchWrapper} ${searchOpenClose ? style.open : ""}`}>
@@ -79,7 +71,18 @@ export default function HeaderRight() {
 			</div>
 		</div>
           <div className={style.basketData}>
-	basket data
+          {
+			BasketItems.map(product=>(
+				<div key={product.id} className={style.basketWrapper}>
+					<img src={product.img} alt={product.title} />
+					<div className={style.basketContent}>
+					<h3 className={style.basketTitle}>{product.title}</h3>
+					<span className={style.basketPrice}>{product.price}</span>
+					</div>
+					<span onClick={()=>removeFromBasket(product)} className={style.delete}><FaRegTrashAlt /></span>
+				</div>
+			))
+		  }
          </div>
 	</div>
 
@@ -88,3 +91,40 @@ export default function HeaderRight() {
 </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+	// const [headerLogin, setHeaderLogin]=useState(false)
+	// const openCloseLogin=()=>{
+	// 	setHeaderLogin(!headerLogin)
+		
+	// }
+	//  onClick={openCloseLogin} 
+
+{/* <div className={`${style.login} ${headerLogin ? style.open : ""}`}>
+		<div className={style.loginHead}>
+			<h3>SIGN IN</h3>
+			<div onClick= {openCloseLogin}>
+			<HeaderClose />
+			</div>
+		</div>
+
+		<form className={style.loginForm}>
+     
+	     <label htmlFor="email">Email address *</label>
+		 <input type="email" id="email" />
+
+		 <label htmlFor="password">Password *</label>
+		 <input type="password" id="password" />
+
+		 <button className={style.loginBtn}>LOGIN</button>
+		</form>
+	</div> */}

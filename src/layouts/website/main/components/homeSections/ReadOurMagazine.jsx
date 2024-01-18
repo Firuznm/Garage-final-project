@@ -17,10 +17,10 @@ function ReadOurMagazine() {
         slidesPerView={1}
         spaceBetween={30}
 		loop={true}
-		autoplay={{
-			delay: 2000,
-			disableOnInteraction: false,
-		  }}
+		// autoplay={{
+		// 	delay: 2000,
+		// 	disableOnInteraction: false,
+		//   }}
         pagination={{
           clickable: true,
         }}
@@ -45,7 +45,7 @@ function ReadOurMagazine() {
              <Link className={style.image}>
 				<img src={item.img} alt={item.title} />
 				<span className={style.date}>13 <br/> DEC</span>
-				<Link className={style.dark}>Dark</Link>
+				<span className={style.dark}>Dark</span>
 			 </Link>
 		
 			 <Link className={style.title}>{item.title}</Link>

@@ -17,7 +17,11 @@ function MainSwiperSlider() {
 	
   return (
 	<section id={style.MainSwiperSlider}>
+   
       <div style={{padding:0}} className="container">
+        {/* <div className={style.wrp}> */}
+        {/* <div className={style.left}>Lorem, ipsum dolor sit amet consectetur adipisicing.</div> */}
+          {/* <div className={style.slider}> */}
 	       <Swiper
         spaceBetween={30}
         effect={'fade'}
@@ -33,7 +37,7 @@ function MainSwiperSlider() {
         
 		{
 			MainSwiperSliderDatas.map(data=>(
-				<SwiperSlide key={data.id}>
+				<SwiperSlide key={data.id}>    
 				<img src={data.image} />
 				<div className={style.mainSwiperSliderText}>
           <h4 className={style.sliderBrandTitle}>{data.brandTitle}</h4>
@@ -44,8 +48,12 @@ function MainSwiperSlider() {
         </SwiperSlide>   
 			))
 		}
-      </Swiper>
+        </Swiper>
+        {/* </div> */}
+        {/* <div className={style.right}>Lorem, ipsum dolor sit amet consectetur adipisicing.</div> */}
+        {/* </div> */}
       </div>
+      
 	</section>
 
   )

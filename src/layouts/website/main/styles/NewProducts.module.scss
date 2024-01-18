@@ -9,6 +9,8 @@
 			grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
 			gap: 2rem;
 		} 
+          .allProduct{
+         padding-bottom: 40px;		
 		.allProductBtn{
 		display: flex;
 		justify-content: center;
@@ -17,7 +19,7 @@
 		margin: 0 auto;
 		background-color: #eb9d37;
 		padding: 10px;
-		margin-bottom: 40px;
+		// margin-bottom: 40px;
 	   font-family: normalOpenFont;
        font-weight: 700;
 	   font-size: 14px;
@@ -27,6 +29,7 @@
 		background-color: green;
 	   }
 		}
+	}
 	}
 
 // ==== newProducts ===== section responsive start

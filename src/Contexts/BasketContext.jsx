@@ -11,7 +11,7 @@ const [BasketItems, setBasketItems] = useState(localStorage.getItem('Basket') ? 
 const addToCart = (item) => {
   const isItemInBasket = BasketItems.find((product) => product.id === item.id);
 
-  if (isItemInBasket) {
+  if (isItemInBasket) {  
 	setBasketItems(
 		BasketItems.map((product) => product.id === item.id
 		  ? { ...product, count: product.count + 1 }  : product
@@ -42,7 +42,7 @@ const clearCart = () => {
 
 const getBasketTotal = () => {
   return BasketItems.reduce((total, item) => total + item.price * item.count, 0);
-};
+};   
 
 useEffect(() => {
   localStorage.setItem("Basket", JSON.stringify(BasketItems));

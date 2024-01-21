@@ -1,0 +1,21 @@
+#AllBasketProduct{
+	.AllBasketProductWrapper{
+		.basketOneProduct{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border: 1px solid #838383;
+			border-radius: 7px;
+			padding: 14px;
+			margin: 7px 0;
+			color: white;
+			img{
+				width: 120px;
+				height: 120px;
+				object-fit: cover;
+				border-radius: 7px;
+			}
+		}
+	
+	}
+}

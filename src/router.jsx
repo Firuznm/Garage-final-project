@@ -9,68 +9,91 @@ import Dashboard from "./layouts/Dashboard/Dashboard";
 import Admin from "./layouts/Dashboard/Admin";
 import Product from "./layouts/Dashboard/Product";
 import Orders from "./layouts/Dashboard/Orders";
-import HomeDash from "./layouts/Dashboard/Brands";
 import Brands from "./layouts/Dashboard/Brands";
-
+import AllBasketProduct from "./layouts/website/main/pages/AllBasketProduct";
+import { useContext, useEffect } from "react";
+import { ProfileCall } from "./services/Auth";
+import { userContext } from "./Contexts/AuthContext";
+import ProtectRoute from "./Helpers/ProtectRoute";
+import AuthRoute from "./Helpers/AuthRoute";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayout/>,
-    children: [
-      {
+    {
         path: "/",
-        element: <Home/>
-      },
-      {
-        path: "home",
-        element: <Home/>,
-      },
-       {
-		     path:"about",
-		     element:<About/>
-	   },
-     {
-      path: "products",
-      element: <AllProducts/>
-     },
-     {
-      path: "products/:id",
-      element: <Details/>
-     },
-     {
-      path: "login",
-      element: <Auth/>
-     },
-    ],
-  },
- 
-  {
-    path: "/admin",
-    element: <Dashboard/>,
-    children: [
-      {
-        path: "/admin",
-        element: <Brands/>
-      },
-      {
-        path: "/admin/brands",
-        element: <Brands/>,
-      },
-      {
-        path: "/admin/products",
-        element: <Product/>,
-      },
-      {
-        path: "/admin/orders",
-        element: <Orders />,
-      },
-    ],
-  },
-  
+        element: <MainLayout />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "home",
+                element: <Home />,
+            },
+            {
+                path: "about",
+                element: <About />,
+            },
+            {
+                path: "products",
+                element: <AllProducts />,
+            },
+            {
+                path: "products/:id",
+                element: <Details />,
+            },
+            {
+                path: "all-basket-products",
+                element: <AllBasketProduct />,
+            },
+            {
+                path: "login",
+                element: <Auth />,
+            },
+        ],
+    },
 
+    {
+        path: "/admin",
+        element: (
+            <AuthRoute>
+                <ProtectRoute>
+                    <Dashboard />
+                </ProtectRoute>
+            </AuthRoute>
+        ),
+        children: [
+            {
+                path: "brands",
+                element: <Brands />,
+            },
+            {
+                path: "products",
+                element: <Product />,
+            },
+            {
+                path: "orders",
+                element: <Orders />,
+            },
+        ],
+    },
+    {
+        path: "/adminlogin",
+        element: <Admin />,
+    },
 ]);
 
 export const MainRouter = () => {
-  return <RouterProvider router={router} />;   
+    const { setUser } = useContext(userContext);
+
+    useEffect(() => {
+        ProfileCall()
+            .then(({ data }) => {
+                setUser(data.data.user);
+            })
+            .catch(() => {
+                setUser(false);
+            });
+    }, []);
+    return <RouterProvider router={router} />;
 };

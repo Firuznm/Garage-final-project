@@ -92,7 +92,7 @@ export default function HeaderRight() {
 		  }
 		  
          </div>
-		<div className={style.viewBasketDiv}><Link className={style.viewBasket}>VIEW BASKET</Link></div>
+		<div onClick={openCloseBasket} className={style.viewBasketDiv}><Link to="/all-basket-products" className={style.viewBasket}>VIEW BASKET</Link></div>
 		 
 	</div>
 

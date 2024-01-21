@@ -1,0 +1,45 @@
+{
+	"az":{
+        "yellowTitle":"Bu, fərdi alt yazıdır",
+		"whiteTitle":"BAZEL DARK LAYUT",
+		"Check-out-latest-of":"Ən son yoxlayın",
+		"BRAND-NEWP-RODUCTS":"YENİ MƏHSULLAR",
+
+		"home":"ANA SƏHİFƏ",
+		"shop":"MAĞAZA",
+		"blog":"BLOQ",
+		"pages":"SƏHİFƏLƏR",
+		"features":"XÜSUSİYYƏTLƏRİ",
+		"shopNow":"İNDİ MAĞAZA EDİN",
+		"Login":"Daxil ol",
+		"Register":"Qeydiyyatdan keçin"
+	     },
+	"en":{
+		"yellowTitle":"This is custom subtitle",
+		"whiteTitle":"BASEL DARK LAYOUT",
+		"Check-out-latest-of":"Check out latest of",
+		"BRAND-NEWP-RODUCTS":"BRAND NEW PRODUCTS",
+		"home":"HOME",
+		"shop":"SHOP",
+		"blog":"BLOG",
+		"pages":"PAGES",
+		"features":"FEATURES",
+		"shopNow":"SHOP NOW",
+		"Login":"Login",
+		"Register":"Register"
+	     },
+	"ru":{
+		"yellowTitle":"Это собственный субтитр",
+		"whiteTitle":"БАЗЕЛЬ ТЕМНАЯ ПЛАНИРОВКА",
+		"Check-out-latest-of":"Ознакомьтесь с последними из",
+		"BRAND-NEWP-RODUCTS":"BRAND NEW PRODUCTS",
+		"home":"ГЛАВНАЯ СТРАНИЦА",
+		"shop":"МАГАЗИН",
+		"blog":"БЛОГ",
+		"pages":"СТРАНИЦЫ",
+		"features":"ФУНКЦИИ",
+		"shopNow":"КУПИТЬ СЕЙЧАС",
+		"Login":"Авторизоваться",
+		"Register":"регистр"
+	     }
+}

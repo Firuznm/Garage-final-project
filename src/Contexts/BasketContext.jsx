@@ -55,7 +55,7 @@ useEffect(() => {
   }
 }, []);
 
-console.log("basket cart" , BasketItems);
+// console.log("basket cart" , BasketItems);
 
 	return(
 		<BasketContext.Provider value={{

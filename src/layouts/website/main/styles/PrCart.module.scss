@@ -13,7 +13,7 @@
 			width: 100%;
 			position: absolute;
 			left: 0;
-			bottom:148px;
+			bottom:130px;
 			height: 0;
 			z-index: -1;
 			transition: all .3s;
@@ -53,7 +53,7 @@
 		.prPrice{
 			font-size: 22px;
 			display: block;
-			margin-bottom: 14px;
+			// margin-bottom: 14px;
 		}
 	}
 	&:hover .prIconList{

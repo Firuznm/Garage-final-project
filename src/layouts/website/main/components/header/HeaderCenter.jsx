@@ -5,14 +5,16 @@ import { HeaderShopDatas } from "../../MyWriteDatas/myDatas";
 import { HeaderBlogDatas } from "../../MyWriteDatas/myDatas";
 import { HeaderPagesDatas } from "../../MyWriteDatas/myDatas";
 import { HeaderFeaturesDatas } from "../../MyWriteDatas/myDatas";
-import FooterHeaderPage from "../FooterHeaderPage";
+import   FooterHeaderPage from "../FooterHeaderPage";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function HeaderCenter({menu}) {
    const [openClose, setOpenClose]=useState(false)
    const [openCloseBlock, setOpenCloseBlock]=useState(false)
    const [openClosePage, setOpenClosePage]=useState(false)
    const [openCloseFeatures, setOpenCloseFeatures]=useState(false)
+   const {t}=useTranslation()
 
    const onClickOpenClose=()=>{
 	setOpenClose(!openClose)
@@ -32,10 +34,10 @@ export default function HeaderCenter({menu}) {
   return (    
 	<div className={style.headercenterWrapper}>
 	  <ul className={`${style.navPages} ${menu ? style.close : ""}`}>
-					<li  className={style.homeLi}> <a className={style.homeLink} href="/">HOME</a><IoIosArrowDown  className={style.arrowIcon}/>
+					<li  className={style.homeLi}> <a className={style.homeLink} href="/">{t("home")}</a><IoIosArrowDown  className={style.arrowIcon}/>
 				
 					</li>
-					<li  onClick={onClickOpenClose} className={style.shopLi}> SHOP
+					<li  onClick={onClickOpenClose} className={style.shopLi}>{t("shop")}
 					<IoIosArrowDown  className={style.arrowIcon}/>
 				
 				 	<div className={style.dropShopMenu}>
@@ -49,7 +51,7 @@ export default function HeaderCenter({menu}) {
 					</div>
 					</li>
 
-					<li onClick={onClickOpenCloseBlock} className={style.blogLi}>BLOG <IoIosArrowDown  className={style.arrowIcon}/>
+					<li onClick={onClickOpenCloseBlock} className={style.blogLi}>{t("blog")}<IoIosArrowDown  className={style.arrowIcon}/>
 					  <div className={style.BlogDropMenu}>
                          <div className={`${style.blog} ${openCloseBlock ?style.openClose : ""}`}>
 							{
@@ -60,7 +62,7 @@ export default function HeaderCenter({menu}) {
 						 </div>
 					  </div> 
 					</li>
-					<li onClick={onClickOpenClosePage} className={style.pageLi}>PAGES <IoIosArrowDown  className={style.arrowIcon}/>
+					<li onClick={onClickOpenClosePage} className={style.pageLi}>{t("pages")}<IoIosArrowDown  className={style.arrowIcon}/>
 					<div className={style.pageDropMenu}>
                          <div className={`${style.page} ${openClosePage ?style.openClose : ""}`}>
 							{
@@ -71,7 +73,7 @@ export default function HeaderCenter({menu}) {
 						 </div>
 					  </div> 
 					</li>
-					<li onClick={onClickOpenCloseFeatures} className={style.featuresLi}>FEATURES <IoIosArrowDown  className={style.arrowIcon}/>
+					<li onClick={onClickOpenCloseFeatures} className={style.featuresLi}>{t("features")}<IoIosArrowDown  className={style.arrowIcon}/>
 					<div className={style.featureDropMenu}>
                          <div className={`${style.feature} ${openCloseFeatures ?style.openClose : ""}`}>
 							{

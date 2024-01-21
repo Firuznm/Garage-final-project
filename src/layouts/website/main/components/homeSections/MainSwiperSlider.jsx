@@ -1,4 +1,3 @@
-import React from 'react'
 // import style scss
 import style from "../../styles/MainSwiperSlider.module.scss"
 // IMPORT MY WRITE DATAS
@@ -12,23 +11,28 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { EffectFade,  Autoplay, Navigation,} from 'swiper/modules';
 import Button from '../Button';
+// recat icons import
+import { MdArrowBackIosNew } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 function MainSwiperSlider() {
-	
+   const {t}=useTranslation()
   return (
 	<section id={style.MainSwiperSlider}>
    
       <div style={{padding:0}} className="container">
-        {/* <div className={style.wrp}> */}
-        {/* <div className={style.left}>Lorem, ipsum dolor sit amet consectetur adipisicing.</div> */}
-          {/* <div className={style.slider}> */}
+    
 	       <Swiper
         spaceBetween={30}
         effect={'fade'}
-        navigation={true}
+        navigation={{ 
+          prevEl: '.custom-swiper-button-prev',
+          nextEl: '.custom-swiper-button-next'
+          }}
 	    	loop={true}
         autoplay={{
-          delay: 2000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         modules={[EffectFade,Autoplay,  Navigation,]}
@@ -43,15 +47,14 @@ function MainSwiperSlider() {
           <h4 className={style.sliderBrandTitle}>{data.brandTitle}</h4>
           <h2 className={style.sliderTitle}>{data.title}</h2>
           <p className={style.sliderDescription}>{data.descrtiption}</p>
-        <Button title={"SHOP NOW"}/>
+          <Button title={t("shopNow")}/>
         </div>
         </SwiperSlide>   
 			))
 		}
+    	    <div className="custom-swiper-button-prev"><MdArrowBackIosNew /></div>
+					<div className="custom-swiper-button-next"><MdArrowForwardIos /></div>
         </Swiper>
-        {/* </div> */}
-        {/* <div className={style.right}>Lorem, ipsum dolor sit amet consectetur adipisicing.</div> */}
-        {/* </div> */}
       </div>
       
 	</section>

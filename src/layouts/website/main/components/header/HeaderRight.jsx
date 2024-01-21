@@ -13,16 +13,23 @@ import { useContext } from "react";
 import { BasketContext } from "../../../../../Contexts/BasketContext";
 import { WishListContext } from "../../../../../Contexts/WishList";
 
+import { GlobalContext } from "../../../../../Contexts/GlobalContext";
+import { LanguageConext } from "../../../../../Contexts/LanguageContext";
+import { useTranslation } from "react-i18next";
+
 export default function HeaderRight() {
 	const { BasketItems, getBasketTotal,removeFromBasket }=useContext(BasketContext)
 	const [searchOpenClose, setSearchOpenClose]=useState(false)
 	const [basketOpenClose,setBasketOpenClose]=useState(false)
     const {WishList}=useContext(WishListContext)
+	const {t}=useTranslation()
 
+	const {multiLang, onChangeLang}=useContext(LanguageConext)
 
+	const{onChangeColor,selectValue}=useContext(GlobalContext)
 	// console.log("wish",WishList);
 
-	console.log("hed",BasketItems);  
+	// console.log("hed",BasketItems);  
 
     const openCloseSearch=()=>{
 		setSearchOpenClose(!searchOpenClose)
@@ -35,7 +42,7 @@ export default function HeaderRight() {
 	<div className={style.navRight}>
 	<Link  to={"/login"}
 	  className={style.loginRegisterBtn}>
-	 <span className={style.loginRegister}>	Login / Register</span>
+	 <span className={style.loginRegister}>	{t("Login")} / {t("Register")}</span>
 		<MdOutlinePersonOutline  className={style.person}/>
  </Link>
 	<IoIosSearch onClick={openCloseSearch} className={style.searchIcon} />
@@ -69,11 +76,11 @@ export default function HeaderRight() {
 			<div onClick= {openCloseBasket}>
 			<HeaderClose />
 			</div>
-		</div>
+		 </div>
           <div className={style.basketData}>
           {
 			BasketItems.map(product=>(
-				<div key={product.id} className={style.basketWrapper}>
+				<div key={product.id} className={style.basketDataWrapper}>
 					<img src={product.img} alt={product.title} />
 					<div className={style.basketContent}>
 					<h3 className={style.basketTitle}>{product.title}</h3>
@@ -83,10 +90,24 @@ export default function HeaderRight() {
 				</div>
 			))
 		  }
+		  
          </div>
+		<div className={style.viewBasketDiv}><Link className={style.viewBasket}>VIEW BASKET</Link></div>
+		 
 	</div>
 
-
+    <div>
+	            <select className={style.colorSelected} value={selectValue}  onChange={onChangeColor}>
+					<option value="black">Black</option>
+					<option value="blue">Blue</option>
+					<option value="fuchsia">Fuchsia</option>
+				</select>
+				<select className={style.MultiLang} value={multiLang}  onChange={onChangeLang}>
+					<option value="az">AZ</option>
+					<option value="en">EN</option>
+					<option value="ru">RU</option>
+				</select>
+	</div>
 
 </div>
   )

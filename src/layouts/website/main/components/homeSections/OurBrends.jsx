@@ -3,18 +3,100 @@ import style from "../../styles/OurBrends.module.scss"
 // iport my write datas
 import { OurBrendsDatas } from "../../MyWriteDatas/myDatas"
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
 import { Link } from "react-router-dom";
-
+// import slick slider 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 export default function OurBrends() {
+	const settings = {
+		dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 5000,     
+        autoplaySpeed: false,
+        cssEase: "linear",
+		pauseOnHover: true,
+		responsive: [
+			{
+				breakpoint: 1800,
+				settings: {
+				  slidesToShow: 4,    
+				}
+			  },
+			{
+			  breakpoint: 1500,
+			  settings: {
+				slidesToShow: 4,     
+			  }
+			},
+			{
+				breakpoint: 1250,
+				settings: {
+				  slidesToShow: 3.3,
+				}
+			  },
+			  {
+				breakpoint: 1100,
+				settings: {
+				  slidesToShow: 3,
+				}
+			  },
+			{
+			  breakpoint: 1000,
+			  settings: {
+				slidesToShow: 2.5, 
+			  }
+			},
+			{
+				breakpoint: 900,
+				settings: {
+				  slidesToShow: 5, 
+				}
+			  },
+			{
+			  breakpoint: 700,
+			  settings: {
+				slidesToShow: 3.5,   
+			  }
+			},
+			{
+				breakpoint: 580,
+				settings: {
+				  slidesToShow: 2.5,     
+				}
+			  },
+			  {
+				breakpoint: 430,
+				settings: {
+				  slidesToShow: 1.5,     
+				}
+			  }
+		      ]		
+	  }; 
   return (
 	<section id={style.OurBrends}>
 		<div className="container">
 			<div className={style.OurBrendsWrapper}>
 				<h3 className={style.title}>OUR BRENDS</h3>
 				<hr className={style.brendsLine}/>
-			<Swiper
+				<div className={style.OurBrendsSlider}>
+				<Slider {...settings}>   
+             {
+				OurBrendsDatas.map(brend=>(
+					<div key={brend.id}>
+						<span className={style.brendTitle} >{brend.title}</span>
+                     </div>
+				))
+			 }
+
+           </Slider> 
+		   </div>
+			{/* <Swiper
         slidesPerView={4}
         spaceBetween={30}
 		loop={true}
@@ -29,7 +111,7 @@ export default function OurBrends() {
 				</SwiperSlide>
 			))}
 	
-           </Swiper>
+           </Swiper> */}
 			</div>
 		</div>
 	  

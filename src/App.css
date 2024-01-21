@@ -12,8 +12,85 @@
  body{
 	background-color:black;
 } 
+/* custom Subtitle section swiper slider arrow css  */
+.swiper-nav-button-next,
+.swiper-nav-button-prev {
+	position: absolute;
+	top: var(--swiper-navigation-top-offset, 50%);
+	margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+	background-color: #0098ff;
+	padding: 10px 12px 8px 12px;
+	border-radius: 100%;
+	z-index: 99999;
+	cursor: pointer;   
+	transition: .7s;
+	svg{
+		fill: white;
+		font-size: 18px;
+	}
+}
+.swiper-nav-button-next:hover {
+	background-color: #8a06ee;
+}
+.swiper-nav-button-prev:hover {
+	background-color: #8a06ee;
+}
 
+.swiper-nav-button-next {
+	right: var(--swiper-navigation-sides-offset, 10px);
+	left: auto;
+}
 
+.swiper-nav-button-prev {
+	left: var(--swiper-navigation-sides-offset, 10px);
+	right: auto;
+}
+
+/* mainSwiperSlider buttons style */
+.custom-swiper-button-prev{
+    position: absolute;
+    top: 50%;
+	left: 0;
+    border-radius: 0 30px 30px 0;
+    padding: 14px 20px 12px 11px;
+    background-color: rgb(199, 199, 199);
+    z-index: 999;
+    cursor: pointer;
+	transition: .7s ease;
+	svg{
+		fill: black;
+		font-size: 20px;
+	}
+	&:hover{
+		background-color:white;
+	}
+}
+.custom-swiper-button-next{
+    position: absolute;
+    top: 50%;
+	right: 0;
+    border-radius: 30px 0 0 30px;
+    padding:16px 15px 12px 20px;
+    background-color: rgb(199, 199, 199);
+    z-index: 999;
+    cursor: pointer;
+	transition: .4s ease;
+	svg{
+		fill: black;
+		font-size: 20px;
+	}
+	&:hover{
+		background-color:white
+	}
+}
+/* ourBrends section slick slider style */
+.slick-slider {
+	.slick-arrow {
+		display: none !important;
+	}
+}
+
+/*site allContainer responsive style */
 @media only screen and (max-width: 1500px) {
 	.container{
 		max-width: 98%;

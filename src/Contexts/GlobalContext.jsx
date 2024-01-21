@@ -4,38 +4,25 @@ import { createContext, useEffect, useState,} from "react";
 export const GlobalContext=createContext()   
 
 export const GlobalProvider=({children})=>{
+const [selectValue, setSelectValue]=useState(localStorage.getItem("siteColor") || "black")
 
-const [color, setColor] = useState(localStorage.getItem("mycolor") || "red");
-
-const [val, setVal]=useState(localStorage.getItem("col") || "yellow")
-
-const onClickColorChange = () => {
-  const newColor = color === "red" ? "green" : "red";
-  setColor(newColor);
-  localStorage.setItem("mycolor", newColor);
-};
-
-const chCol=(e)=>{
-	localStorage.setItem("col",e.target.value)
-	setVal(e.target.value)
+const onChangeColor=(e)=>{
+	localStorage.setItem("siteColor",e.target.value)
+	setSelectValue(e.target.value)
 }
-useEffect(() => {
-  const allContainers = Array.from(document.getElementsByClassName("container"));
-  allContainers.forEach((container) => {
-	container.style.backgroundColor = color;
-  });
-}, [color]);
 
 useEffect(() => {
 	const allContainers = Array.from(document.getElementsByClassName("container"));
-	allContainers.forEach((container) => {
-	  container.style.backgroundColor = val;
+
+	allContainers.map((container) => {
+	  container.style.backgroundColor = selectValue;
 	});
-  }, [val]);
+  }, [selectValue]);
   
 
+ 
 	return (
-		<GlobalContext.Provider value={{onClickColorChange, color,chCol,val}}>
+		<GlobalContext.Provider value={{onChangeColor,selectValue}}>
 			{children}
 		</GlobalContext.Provider>
 	)

@@ -6,12 +6,14 @@ import TitleList from "../TitleList"
 // import my write data
 import { NewProductsDatas } from "../../MyWriteDatas/myDatas"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 function NewProducts() {
+	const {t}=useTranslation()
   return (
 	<section id={style.newProducts}>
 		<div style={{padding:"0"}} className="container">
-			<TitleList yellowTitle={"Check out latest of"} whiteTitle={"BRAND NEW PRODUCTS"}/>
+			<TitleList yellowTitle={t("Check-out-latest-of")} whiteTitle={t("BRAND-NEWP-RODUCTS")}/>
 			<div className={style.wrapperNewProducts}>
 				{
 				 NewProductsDatas.slice(0,8).map(item=>(

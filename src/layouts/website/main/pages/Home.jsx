@@ -19,8 +19,9 @@ export default function Home() {
 	  <SaveSale/>
 	  <ReadOurMagazine/>
 	  <ClientsOpinions/>
+	  <OurBrends/>
 	  <OurPartners/>
-	  {/* <OurBrends/> */}
+
 	</section>
   )
 }

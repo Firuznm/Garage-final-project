@@ -83,7 +83,7 @@ export const HeaderShopDatas=[
 
 export const MainSwiperSliderDatas=[
 	{
-		id:1,
+		id:1,  
 		image:mainSliderImg1,
 		brandTitle:"Latest brand name",
 		title:"FAMOUS MAKER WATCHES",

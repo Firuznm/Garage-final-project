@@ -1,7 +1,14 @@
 #allProduct{
+	.allProducts{
+		text-align: center;
+	    padding-bottom: 40px;
+		font-size: 2rem;
+		color: white;
+		font-family: normalOpenFont;
+	}
 	.prWrapper{
 		display: grid;
-		grid-template-columns: repeat(auto-fill ,minmax(17rem, 1fr));
+		grid-template-columns: repeat(auto-fill ,minmax(15rem, 1fr));
 		gap: 1rem;
 	}
 }

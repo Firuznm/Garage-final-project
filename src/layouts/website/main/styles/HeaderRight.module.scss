@@ -1,8 +1,13 @@
 .navRight {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
+	.serachLoginBasketWrapper{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+
 	.loginRegisterBtn{
 		     background: none;
 			border: none;
@@ -33,6 +38,7 @@
 		position: absolute;
 		top: -12px;
 		left: 12px;
+		transform: translate(-5%,10%);
 		padding: 0px 6px;
 		background-color: red;
 		border-radius: 100%;
@@ -185,7 +191,6 @@
 	   .basketDataWrapper{
        display: flex;
 	   justify-content: space-between;
-	//    align-items: center;
 	   margin: 20px 0;
 	   img{
 		width: 70px;
@@ -228,8 +233,9 @@
 			font-weight: 700;
 		}
 	}
-
+}
   }
+  .selectedList{
   .colorSelected,
   .MultiLang{
 	  outline: none;
@@ -242,12 +248,16 @@
 	margin-left: 7px;
   }
   }
-
+}
 
 // ====  Header center  ===== section responsive start
 @media only screen and (max-width: 900px) {
 	.navRight {
 		gap: .5rem;
+		flex-direction: column;
+		align-items: end;
+		.serachLoginBasketWrapper{
+			gap: .4rem;
 		.loginRegisterBtn{
 	   .loginRegister {
 		display: none;
@@ -263,19 +273,6 @@
 		  cursor: pointer;
 		}
 	  
-		.heartIcon {
-		display: none;
-		}
-		.navBasket {
-			.count,
-			.price{
-			  display: none;
-			}
-		  .line {
-		display: none;
-		  }
-		}
-	  
 		.login {
 		  width: 270px;
 		  .loginHead {
@@ -287,11 +284,9 @@
 		  }
 		}
 	   .searchWrapper{
-	
 		.searchInpIcon{
 			.searchInp{
 				font-size: 1rem;
-				
 			}
 			.searchIcon{
 				font-size: 2rem;
@@ -311,8 +306,8 @@
 		  padding: 1rem;
 		}
 	  }
-
 	  }
+	}
 	
 
 }

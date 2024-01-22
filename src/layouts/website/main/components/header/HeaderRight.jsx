@@ -13,9 +13,9 @@ import { useContext } from "react";
 import { BasketContext } from "../../../../../Contexts/BasketContext";
 import { WishListContext } from "../../../../../Contexts/WishList";
 
-import { GlobalContext } from "../../../../../Contexts/GlobalContext";
 import { LanguageConext } from "../../../../../Contexts/LanguageContext";
 import { useTranslation } from "react-i18next";
+import { ColorContext } from "../../../../../Contexts/ColorContext";
 
 export default function HeaderRight() {
 	const { BasketItems, getBasketTotal,removeFromBasket }=useContext(BasketContext)
@@ -25,11 +25,7 @@ export default function HeaderRight() {
 	const {t}=useTranslation()
 
 	const {multiLang, onChangeLang}=useContext(LanguageConext)
-
-	const{onChangeColor,selectValue}=useContext(GlobalContext)
-	// console.log("wish",WishList);
-
-	// console.log("hed",BasketItems);  
+	const{onChangeColor,selectValue}=useContext(ColorContext)
 
     const openCloseSearch=()=>{
 		setSearchOpenClose(!searchOpenClose)
@@ -40,17 +36,18 @@ export default function HeaderRight() {
 	 
   return (
 	<div className={style.navRight}>
+		<div className={style.serachLoginBasketWrapper}>
 	<Link  to={"/login"}
 	  className={style.loginRegisterBtn}>
 	 <span className={style.loginRegister}>	{t("Login")} / {t("Register")}</span>
 		<MdOutlinePersonOutline  className={style.person}/>
- </Link>
+     </Link>
 	<IoIosSearch onClick={openCloseSearch} className={style.searchIcon} />
 
 	<span className={style.wishList}>
 	<FaRegHeart  className={style.heartIcon} /> 
 	 <span className={style.wishListCount}>{WishList.length}</span>
-	</span>
+	</span>   
 
 	<div onClick={openCloseBasket}  className={style.navBasket}>
 	<SlBasket  className={style.BasketIcon}/>
@@ -80,11 +77,11 @@ export default function HeaderRight() {
           <div className={style.basketData}>
           {
 			BasketItems.map(product=>(
-				<div key={product.id} className={style.basketDataWrapper}>
-					<img src={product.img} alt={product.title} />
+				<div key={product._id} className={style.basketDataWrapper}>
+					<img src={product.images[0].url} alt={product.title} />
 					<div className={style.basketContent}>
 					<h3 className={style.basketTitle}>{product.title}</h3>
-					<span className={style.basketPrice}>{product.price}</span>
+					<span className={style.basketPrice}>{product.productPrice}</span>
 					</div>
 					<span onClick={()=>removeFromBasket(product)} className={style.delete}><FaRegTrashAlt /></span>
 				</div>
@@ -95,8 +92,9 @@ export default function HeaderRight() {
 		<div onClick={openCloseBasket} className={style.viewBasketDiv}><Link to="/all-basket-products" className={style.viewBasket}>VIEW BASKET</Link></div>
 		 
 	</div>
+	</div>
 
-    <div>
+            <div className={style.selectedList}>
 	            <select className={style.colorSelected} value={selectValue}  onChange={onChangeColor}>
 					<option value="black">Black</option>
 					<option value="blue">Blue</option>
@@ -107,7 +105,7 @@ export default function HeaderRight() {
 					<option value="en">EN</option>
 					<option value="ru">RU</option>
 				</select>
-	</div>
+	        </div>
 
 </div>
   )

@@ -1,28 +1,32 @@
-import { createContext, useEffect, useState,} from "react";
+import { createContext, useEffect, useState } from "react";
+import myshop from "../Helpers/MyShop";
+import urls from "../ApiValues/urls";
 
 
 export const GlobalContext=createContext()   
 
 export const GlobalProvider=({children})=>{
-const [selectValue, setSelectValue]=useState(localStorage.getItem("siteColor") || "black")
-
-const onChangeColor=(e)=>{
-	localStorage.setItem("siteColor",e.target.value)
-	setSelectValue(e.target.value)
-}
-
-useEffect(() => {
-	const allContainers = Array.from(document.getElementsByClassName("container"));
-
-	allContainers.map((container) => {
-	  container.style.backgroundColor = selectValue;
-	});
-  }, [selectValue]);
+       const [allProductDatas, setAllProductDatas] = useState([]);
+	   const [loading, setLoading]=useState(true)
   
+	const getAllProductDatas= async ()=>{
+		try {  
+			const resAllProductData= await myshop.api().get(urls.siteAllProducts)
+			      setAllProductDatas(resAllProductData.data.data.product)
+				  setLoading(false)
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
+	useEffect(()=>{
+     getAllProductDatas()
+	},[])
+  
+    console.log("all",allProductDatas);
  
 	return (
-		<GlobalContext.Provider value={{onChangeColor,selectValue}}>
+		<GlobalContext.Provider  value={{allProductDatas,loading}}>
 			{children}
 		</GlobalContext.Provider>
 	)

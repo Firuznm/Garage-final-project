@@ -4,20 +4,22 @@ import PrCart from "../PrCart"
 // import component 
 import TitleList from "../TitleList"
 // import my write data
-import { NewProductsDatas } from "../../MyWriteDatas/myDatas"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
+import { useContext } from "react"
+import { GlobalContext } from "../../../../../Contexts/GlobalContext"
 
 function NewProducts() {
 	const {t}=useTranslation()
+	const {allProductDatas}=useContext(GlobalContext)
   return (
 	<section id={style.newProducts}>
 		<div style={{padding:"0"}} className="container">
 			<TitleList yellowTitle={t("Check-out-latest-of")} whiteTitle={t("BRAND-NEWP-RODUCTS")}/>
 			<div className={style.wrapperNewProducts}>
 				{
-				 NewProductsDatas.slice(0,8).map(item=>(
-					<PrCart key={item.id} data={item}/>
+				 allProductDatas.slice(0,10).map(item=>(
+					<PrCart key={item._id} data={item}/>
 				 ))
 				}
                  

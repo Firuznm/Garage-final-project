@@ -1,8 +1,8 @@
 // import style css
-import style from "../main/styles/Auth.module.scss"
+import style from "../styles/Auth.module.scss"
 import { useState } from "react"
 
-
+   
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 

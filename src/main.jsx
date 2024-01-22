@@ -7,11 +7,14 @@ import { GlobalProvider } from "./Contexts/GlobalContext.jsx";
 import { BasketProvider } from "./Contexts/BasketContext.jsx";
 import { WishListProvider } from "./Contexts/WishList.jsx";
 import { LanguageProvider } from "./Contexts/LanguageContext.jsx";
-import AuthContext from "./Contexts/AuthContext.jsx";
+import { UserPovider } from "./Contexts/AuthContext.jsx";
+import { ColorProvider } from "./Contexts/ColorContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <AuthContext>
-        <LanguageProvider>
+   
+        <UserPovider>
+         <ColorProvider>
+         <LanguageProvider>
             <BasketProvider>
                 <WishListProvider>
                     <GlobalProvider>
@@ -20,5 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 </WishListProvider>
             </BasketProvider>
         </LanguageProvider>
-    </AuthContext>
+        </ColorProvider>
+        </UserPovider>
+  
 );

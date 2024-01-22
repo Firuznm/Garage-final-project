@@ -1,5 +1,4 @@
 .header{
-	// background-color: black;
 	color:  white;
 	font-family: normalOpenFont;
 	position: sticky;
@@ -7,38 +6,40 @@
 	left: 0;
 	z-index: 999;
 		.nav{
-			height: 100px;
+			height: 110px;
 			transition:  all .5s;
             padding: 0 10px;
 			margin: 0 auto;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			.logoHamburgerMenuWrapper{
 			.hamburgerMenu{
 				display: none;
 			}
 			.navLogo{
-				font-size: 1.5rem;
+				font-size: 1rem;
 				font-weight: 700;
 			}    
-
+		}
 		
 			  }
-			}
+	}
 		
 		.header{	
 			.navBlack{
 				// background-color: black;
-				height: 80px;
+				height: 90px;
 	          	}
 			}
 
 
-// ====  Header  ===== section responsive start
+// ====  Header  ===== section responsive 900px
 @media only screen and (max-width: 900px) {
 	.header{
 		background-color: black;
 		.nav{
+			.logoHamburgerMenuWrapper{
 			.hamburgerMenu{
 				display: block;
 				font-size: 28px;
@@ -46,9 +47,10 @@
 				margin-top: 5px;
 			}
 			.navLogo{
-				font-size: 1rem;
+				font-size: .6rem;
 				font-weight: 700;
 			} 
+		}
 			  }
 				}
 				.navBlack{

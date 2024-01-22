@@ -1,17 +1,31 @@
 // import style css
 import style from "../../styles/OurBrends.module.scss"
-// iport my write datas
-import { OurBrendsDatas } from "../../MyWriteDatas/myDatas"
-// Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-import { Link } from "react-router-dom";
+
 // import slick slider 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
+import myshop from "../../../../../Helpers/MyShop";
+import urls from "../../../../../ApiValues/urls";
+
+
 export default function OurBrends() {
-	const settings = {
+	   const [allBrendsData, setAllBrendsData]=useState([]);
+        
+	   const getBrendsData= async ()=>{
+		try {
+			const brendsDataRes= await myshop.api().get(urls.siteAllBrends)
+			setAllBrendsData(brendsDataRes.data.data)
+		} catch (error) {
+			console.log(error);
+		}
+	   }
+       useEffect(()=>{
+       getBrendsData()
+	   },[])
+
+	   const settings = {
 		dots: false,
         infinite: true,
         slidesToShow: 4,
@@ -87,31 +101,15 @@ export default function OurBrends() {
 				<div className={style.OurBrendsSlider}>
 				<Slider {...settings}>   
              {
-				OurBrendsDatas.map(brend=>(
-					<div key={brend.id}>
-						<span className={style.brendTitle} >{brend.title}</span>
+				allBrendsData.map(brend=>(
+					<div key={brend._id}>
+						<span className={style.brendTitle} >{brend.name}</span>
                      </div>
 				))
 			 }
 
            </Slider> 
 		   </div>
-			{/* <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-		loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        className={style.mySwiper}
-      >
-			{OurBrendsDatas.map(brend=>(
-				<SwiperSlide key={brend.id}>
-				<Link >{brend.title}</Link>
-				</SwiperSlide>
-			))}
-	
-           </Swiper> */}
 			</div>
 		</div>
 	  

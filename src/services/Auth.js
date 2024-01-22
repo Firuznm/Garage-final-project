@@ -1,11 +1,11 @@
-import { API } from "../Helpers/axios";
+import myshop from "../Helpers/MyShop";
 
 export const LoginCall = (data) => {
-    let res = API.post("/login",data);
+    let res = myshop.api().post("/login",data);
     return res;
 };
 
 export const ProfileCall = (data) => {
-   let res= API.get("/profile",data);
+   let res= myshop.api().get("/profile",data);
     return res;
 };

@@ -1,12 +1,13 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import { userContext } from "../Contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { UserContext, } from "../Contexts/AuthContext";
 import { useContext } from "react";
+import Loading from "../layouts/Dashboard/Components/Loading";
 
 export default function AuthRoute({ children }) {
     const navigate = useNavigate();
-    const { user } = useContext(userContext);
+    const { user } = useContext(UserContext);
     if (user ) return <>{children}</>;
-    else if (user === null) return <h1>... loading</h1>;
+    else if (user === null) return <Loading/>;
     else {
         return navigate("/adminlogin");
     }

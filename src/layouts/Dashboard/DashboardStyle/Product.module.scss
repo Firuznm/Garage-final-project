@@ -9,7 +9,7 @@
 			text-align: center;
 			
 		}
-		.AddBrandsBtn{
+		.AddBrandsBtn{   
 			padding: 7px 14px;
 			background-color: #333;
 			color: white;
@@ -34,12 +34,14 @@
 		  form{
 			display: flex;
 			flex-direction: column;
-			input{
+			input,
+			textarea{
 				width: 100%;
 				padding: 7px;
 				margin: 7px 0;
-				// outline: none;
+				outline: none;
 			}
+			
 			.sendBtn{
 				margin: 15px 0 30px;
 				padding: 7px 0;

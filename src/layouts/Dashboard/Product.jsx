@@ -1,14 +1,18 @@
 // import style css
 import style from "../Dashboard/DashboardStyle/Product.module.scss";
 import FileConverter from "../../Helpers/FileConverter";
-import { API } from "../../Helpers/axios";
 import { useEffect, useState } from "react";
 import { Button, Modal, Space, Table } from "antd";
 import { useFormik } from "formik";
+import myshop from "../../Helpers/MyShop";
+import Loading from "./Components/Loading";
+import urls from "../../ApiValues/urls";
 
 export default function Product() {
     const [customModal, setCustomModal] = useState(false);
-    const [imgValue, setImageValue] = useState([])
+    const [imgValue, setImageValue] = useState([]);
+	const [dashboardProduct, setDashboardProduct]=useState([]);
+    const [loading ,setLoading]=useState(true)
 
     const ModalShowHidden = () => {
         setCustomModal(!customModal);
@@ -23,34 +27,42 @@ export default function Product() {
             brandId: "",
             images: "",
         },
-        onSubmit: (values) => {
-            values.images = imgValue;
-            API.post("/dashboard/products", values).then((res)=>{
-				console.log(res)
-			})
+        onSubmit: async (values) => {
+              values.images = imgValue;
+			try {
+				 await myshop.api().post(urls.dashboardProductPost, values)
+			} catch (error) {
+				      console.log(error);
+			}
+			resetForm();
+			ModalShowHidden();
+			getDashboardProduct();
         },
     });
 
-	const getProducts=()=>API.get("/dashboard/products")
 
+	const getDashboardProduct= async ()=>{
+		try {
+			const dashboardProductRes= await myshop.api().get(urls.dashboardProductGet)
+			      setDashboardProduct(dashboardProductRes.data.data.product)
+                  setLoading(false)
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
-    const [data, setData] = useState([]);
-    useEffect(() => {
-       getProducts().then((res) => {
-            setData(res.data.data.product);
-			
-        });
-    }, []);
+    useEffect(()=>{
+     getDashboardProduct()
+	},[])
 	const { confirm } = Modal;
 
-	const handleDelete = (record) => {
+	const ProductDelete = (record) => {
         confirm({
-            title: ` Do you want to delete "${record.name} "?`,
+            title: ` Do you want to delete "${record.title} "?`,
             content: 'This action cannot be undone.',
-            onOk() {
-                API.delete(`/dashboard/products/${record._id}`)
+            onOk() {  myshop.api().delete(`${urls.dashboardProductDelete}${record._id}`)
                     .then(() => {
-                    getProducts();
+                    getDashboardProduct();
                     })
                     .catch((error) => {
                         console.error(error);
@@ -71,7 +83,7 @@ export default function Product() {
             title: "product",
             dataIndex: "images",
             key: "images",
-            render: (images) => (images && images[0].url ? <img src={images[0].url} alt="brand" style={{ width: "50px", height: "50px" }} /> : null),
+            render: (images) => (images && images[0].url ? <img src={images[0].url} alt="brand" style={{ width: "80px", height: "100px" , objectFit:"cover",borderRadius:"7px"}} /> : null),
         },
 		{
             title: "product Price",
@@ -93,21 +105,24 @@ export default function Product() {
             dataIndex: 'actions',
             key: 'actions',
             render: (text, record) => (
-                <Space>
-                    <Button type="primary"  onClick={() => handleEdit(record)}>Edit</Button>
-                    <Button type="danger"  onClick={() => handleDelete(record)}>Delete</Button>
-                </Space>
+                <>
+                    <button  className={style.editBtn}>Edit</button>
+                    <button   onClick={() => ProductDelete(record)} className={style.deleteBtn}>Delete</button>
+                </>
             ),
         },
     ];
 
     return (
-        <section id={style.DashProduct}>
+        <>
+        {
+            loading ? <Loading/> :
+            <section id={style.DashProduct}>
             <div className="container">
                 <div className={style.DashProductWrapper}>
                     <h2 className={style.title}>Dashboard Product list</h2>
                     <button onClick={ModalShowHidden} className={style.AddBrandsBtn}>
-                        Add Brands
+                        Add Products
                     </button>
                     <div>
                         {customModal && (
@@ -115,13 +130,11 @@ export default function Product() {
                                 <form onSubmit={handleSubmit}>
                                     <input name="title" placeholder="product title" value={values.title} onChange={handleChange} />
                                     <textarea name="description" placeholder="description" value={values.description} onChange={handleChange} cols="5" rows="5"></textarea>
-                                    {/* <input name="description" placeholder="descripton" value={values.description} onChange={handleChange}/> */}
                                     <input name="productPrice" placeholder="productPrice" value={values.productPrice} onChange={handleChange} />
                                     <input name="salePrice" placeholder="salePrice" value={values.salePrice} onChange={handleChange} />
                                     <input name="stock" placeholder="stock" value={values.stock} onChange={handleChange} />
                                     <input name="brandId" placeholder="brandId" value={values.brandId} onChange={handleChange} />
-
-                                    <input
+                                    <input   
                                         name="image"
                                         type="file"
                                         multiple={true}
@@ -145,10 +158,13 @@ export default function Product() {
                                 </span>
                             </div>
                         )}
-                        <Table dataSource={data} columns={columns} rowKey="id" />
+                        <Table dataSource={dashboardProduct} columns={columns} rowKey="_id" />
                     </div>
                 </div>
             </div>
         </section>
+        }
+       
+        </>
     );
 }

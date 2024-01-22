@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { LoginCall } from "../../services/Auth";
-import { userContext } from "../../Contexts/AuthContext";
+import { UserContext } from "../../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+// import style css
+import style from "./DashboardStyle/Adimn.module.scss"
+
+
 export default function Admin() {
-    const { setUser } = useContext(userContext);
+    const { setUser } = useContext(UserContext);
 	const navigate=useNavigate()
+
     const onFinish = (values) => {
         console.log("Success:", values);
         LoginCall(values)
@@ -22,8 +27,9 @@ export default function Admin() {
     const onFinishFailed = (errorInfo) => {
         console.log("Failed:", errorInfo);
     };
+    
     return (
-        <div style={{ color: "red" }}>
+        <div className={style.admin}>
             <Form
                 name="basic"
                 labelCol={{

@@ -4,10 +4,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import HeaderRight from "./HeaderRight";
 import HeaderCenter from "./HeaderCenter";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Header() {    
 	const [hamburgerMenu, setHamburgerMenu]= useState(false)
 	const [navColor,setNavColor]=useState(false)
+	const {t}=useTranslation()
 	
 	
 	 
@@ -21,7 +23,7 @@ function Header() {
 			setNavColor(true)
 		}
 		else{
-			setNavColor(false)
+			setNavColor(false) 
 		}
 	}
 
@@ -32,10 +34,10 @@ function Header() {
 	<section className={style.header}>
 		<div style={{padding: 0,}} className="container">
 			<div className={`${style.nav} ${navColor ? style.navBlack : ""}`}>
+				<div  className={style.logoHamburgerMenuWrapper}>
 				<span onClick={onClickOpenCloseMenu} className={style.hamburgerMenu}><RxHamburgerMenu /></span>
-				<a href="/" className={style.navLogo}>MY SHOP</a>
-				
-			
+				<a href="/" className={style.navLogo}>{t("myShop")}</a>
+				</div>
 			    <HeaderCenter menu={hamburgerMenu} setMenu={setHamburgerMenu}/>
 				<HeaderRight/>
 			</div>

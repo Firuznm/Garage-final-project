@@ -1,25 +1,3 @@
-@font-face {
-	font-family: veryItalicFont;
-	src: url("/public/Fonts/Italianno-Regular.ttf");
-
-}
-@font-face {
-	font-family: lessItalicLoraFont;
-	src: url("/public/Fonts/Lora-VariableFont_wght.ttf");
-
-}
-@font-face {
-	font-family: normalOpenFont;
-	src: url("/public/Fonts/OpenSans-VariableFont_wdth\,wght.ttf");
-
-}
-
-/* @font-face {
-	font-family: "TT Hoves";
-	src: url("/public/assets/fonts/TTHoves-Bold.woff2") format("woff2");
-	font-weight: bold;
-	font-style: normal;
-} */
 
 *{
 	margin: 0;

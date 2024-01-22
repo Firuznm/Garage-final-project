@@ -4,7 +4,7 @@ import About from "./layouts/website/main/pages/About";
 import MainLayout from "./layouts/website/main/MainLayout";
 import Details from "./layouts/website/main/pages/Details";
 import AllProducts from "./layouts/website/main/pages/AllProducts";
-import Auth from "./layouts/website/auth/Auth";
+import Auth from "./layouts/website/main/pages/Auth";
 import Dashboard from "./layouts/Dashboard/Dashboard";
 import Admin from "./layouts/Dashboard/Admin";
 import Product from "./layouts/Dashboard/Product";
@@ -13,9 +13,10 @@ import Brands from "./layouts/Dashboard/Brands";
 import AllBasketProduct from "./layouts/website/main/pages/AllBasketProduct";
 import { useContext, useEffect } from "react";
 import { ProfileCall } from "./services/Auth";
-import { userContext } from "./Contexts/AuthContext";
+import { UserContext } from "./Contexts/AuthContext";
 import ProtectRoute from "./Helpers/ProtectRoute";
 import AuthRoute from "./Helpers/AuthRoute";
+import NotFound from "./layouts/website/main/pages/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -39,12 +40,16 @@ const router = createBrowserRouter([
                 element: <AllProducts />,
             },
             {
-                path: "products/:id",
+                path: "products/:_id",
                 element: <Details />,
             },
             {
                 path: "all-basket-products",
                 element: <AllBasketProduct />,
+            },
+            {
+                path: "*",
+                element: <NotFound />,
             },
             {
                 path: "login",
@@ -84,7 +89,7 @@ const router = createBrowserRouter([
 ]);
 
 export const MainRouter = () => {
-    const { setUser } = useContext(userContext);
+    const { setUser } = useContext(UserContext);
 
     useEffect(() => {
         ProfileCall()

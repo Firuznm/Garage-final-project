@@ -24,7 +24,7 @@ export default function Details() {
 		customPaging: function(i) {
 		  return (
 			<a>
-			  {/* <img src={imgs[i]} /> */}
+			  {/* <img src={ imgs[i]} /> */}
 			</a>
 		  );
 		},
@@ -64,12 +64,12 @@ export default function Details() {
 				))
 			 }
         </Slider>
-		<div className='arrow'>   
-             <span className="prev" onClick={previous}>
+		<div className={style.arrow}>   
+             <span className={style.prev} onClick={previous}>
 			{/* <img src={Prev} alt="prev-img" /> */}
 			prev
              </span>
-             <span className="next"onClick={next}>  
+             <span className={style.next} onClick={next}>  
               {/* <img className='next-img' src={Next} alt="next-img" /> */}
 			  next
              </span>

@@ -14,14 +14,6 @@
 
 }
 
-/* @font-face {
-	font-family: "TT Hoves";
-	src: url("/public/assets/fonts/TTHoves-Bold.woff2") format("woff2");
-	font-weight: bold;
-	font-style: normal;
-} */
-
-
 
 *{
 	margin: 0;
@@ -34,9 +26,7 @@
 	padding: 40px 0;
 }
 
- body{
-	/* background-color:black; */
-} 
+
 /* custom Subtitle section swiper slider arrow css  */
 .swiper-nav-button-next,
 .swiper-nav-button-prev {
@@ -115,6 +105,21 @@
 	}
 }
 
+
+/* color selected change  */
+html[theme="blue"] .container {
+	background: rgb(20, 20, 78);
+} 
+
+html[theme="fuchsia"] .container {
+	background: rgb(90, 12, 90);
+}
+
+html[theme="black"] .container {
+	background: black;
+}
+
+
 /*site allContainer responsive style */
 @media only screen and (max-width: 1500px) {
 	.container{
@@ -123,3 +128,4 @@
 		padding: 40px 0;
 	}
 }
+

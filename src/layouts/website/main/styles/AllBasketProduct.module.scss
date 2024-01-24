@@ -1,22 +1,93 @@
 #AllBasketProduct{
+	.noBasketPr{
+		text-align: center;
+		font-size: 2rem;
+		color: white;
+	}
 	.AllBasketProductWrapper{
 		padding: 0 10px;
-		.basketOneProduct{
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			border: 1px solid #838383;
-			border-radius: 7px;
-			padding: 14px;
-			margin: 7px 0;
-			color: white;
-			img{
-				width: 120px;
-				height: 120px;
-				object-fit: cover;
+		display: flex;
+		justify-content: space-between;
+		.basketPrList{
+			width: calc(100% - 300px);
+			.basketOneProduct{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border: 1px solid #838383;
 				border-radius: 7px;
+				padding: 14px;
+				margin: 14px 0;
+				color: white;
+				img{
+					width: 120px;
+					height: 120px;
+					object-fit: cover;
+					border-radius: 7px;
+				}
+				.basketPrInfo{
+					width: calc(100% - 150px);
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				}
 			}
 		}
-	
+		
+		.basketResult{
+			width: 250px;
+			height: 150px;
+			background-color: white;
+			color: black;
+			padding: 20px;
+			border-radius: 7px;
+        .basketPrCount{
+			display: block;
+			margin: 7px 0;
+		}
+		}
 	}
+}
+
+// ==== AllBasketProduct ===== section responsive start
+@media only screen and (max-width: 900px) {
+	#AllBasketProduct{
+		.AllBasketProductWrapper{
+			flex-direction: column;
+			justify-content: inherit;
+			.basketPrList{
+				width: 100%;
+			}
+			.basketResult{
+				width: 100%;
+			
+	
+			}
+		}
+	}
+	
+}
+
+@media only screen and (max-width: 600px) {
+	#AllBasketProduct{
+		.AllBasketProductWrapper{
+			.basketPrList{
+				width: 100%;
+				.basketOneProduct{
+					.basketPrInfo{
+						width: calc(100% - 150px);
+						flex-direction: column;
+						align-items:flex-start;
+						span{
+							margin: 3px 0;
+						}
+					}
+				}
+			}
+			.basketResult{
+				width: 100%;
+			}
+		}
+	}
+	
 }

@@ -7,9 +7,15 @@
 .dashList{
 	padding: 14px;
 	background-color: black;
+	position: sticky;
+	top: 0;
+    left: 0;
 	a{
 		color: white;
 		font-size: 20px;
 		font-weight: 500;
-		margin: 0 7px;
-	}}
+		margin: 14px 7px;
+		display: inline-block;
+	}
+
+}

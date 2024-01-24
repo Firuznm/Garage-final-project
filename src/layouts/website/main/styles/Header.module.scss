@@ -3,8 +3,11 @@
 	font-family: normalOpenFont;
 	position: sticky;
 	top: 0;
+	// top: -1px;
 	left: 0;
 	z-index: 999;
+	// -webkit-transform: translate3d(0,0,0);
+	// transform: translate3d(0,0,0);
 		.nav{
 			height: 110px;
 			transition:  all .5s;
@@ -13,6 +16,8 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			// -webkit-transform: translate3d(0,0,0);
+			// transform: translate3d(0,0,0);
 			.logoHamburgerMenuWrapper{
 			.hamburgerMenu{
 				display: none;

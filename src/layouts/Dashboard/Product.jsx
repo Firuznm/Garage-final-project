@@ -42,8 +42,9 @@ export default function Product() {
 
 
 	const getDashboardProduct= async ()=>{
+       
 		try {
-			const dashboardProductRes= await myshop.api().get(urls.dashboardProductGet)
+			const dashboardProductRes= await myshop.api().get(`${urls.dashboardProductGet}?page=${1}&perPage=${33}&search=${""}`)
 			      setDashboardProduct(dashboardProductRes.data.data.product)
                   setLoading(false)
 		} catch (error) {
@@ -52,9 +53,10 @@ export default function Product() {
 	}
 
     useEffect(()=>{
-     getDashboardProduct()
+     getDashboardProduct()   
 	},[])
 	const { confirm } = Modal;
+ 
 
 	const ProductDelete = (record) => {
         confirm({
@@ -111,6 +113,7 @@ export default function Product() {
                 </>
             ),
         },
+        
     ];
 
     return (
@@ -158,10 +161,11 @@ export default function Product() {
                                 </span>
                             </div>
                         )}
-                        <Table dataSource={dashboardProduct} columns={columns} rowKey="_id" />
+                        <Table pagination={{ pageSize: 5 }} dataSource={dashboardProduct} columns={columns} rowKey="_id" />
                     </div>
                 </div>
             </div>
+       
         </section>
         }
        

@@ -23,7 +23,7 @@ export default function HeaderRight() {
 	const [searchOpenClose, setSearchOpenClose]=useState(false)
 	const [basketOpenClose,setBasketOpenClose]=useState(false)
     const {WishList}=useContext(WishListContext)   
-	const {searchResult,inpValue,setInpValue}=useContext(GlobalContext)
+	const {searchResult,setInpValue}=useContext(GlobalContext)
 	const {t}=useTranslation()
 
 	const {multiLang, onChangeLang}=useContext(LanguageConext)

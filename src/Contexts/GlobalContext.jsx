@@ -12,7 +12,7 @@ export const GlobalProvider=({children})=>{
   
 	const getAllProductDatas= async ()=>{
 		try {  
-			const resAllProductData= await myshop.api().get(urls.siteAllProducts)
+			const resAllProductData= await myshop.api().get(`${urls.siteAllProducts}?page=${1}&perPage=${33}&search=${""}`)
 			      setAllProductDatas(resAllProductData.data.data.product)
 				  setLoading(false)
 		    } catch (error) {
@@ -31,6 +31,7 @@ export const GlobalProvider=({children})=>{
  
 	return (
 		<GlobalContext.Provider  value={{allProductDatas,loading,searchResult,inpValue,setInpValue}}>
+		
 			{children}
 		</GlobalContext.Provider>
 	)

@@ -16,19 +16,21 @@ import { WishListContext } from "../../../../../Contexts/WishList";
 import { LanguageConext } from "../../../../../Contexts/LanguageContext";
 import { useTranslation } from "react-i18next";
 import { ColorContext } from "../../../../../Contexts/ColorContext";
+import { GlobalContext } from "../../../../../Contexts/GlobalContext";
 
 export default function HeaderRight() {
 	const { BasketItems, getBasketTotal,removeFromBasket }=useContext(BasketContext)
 	const [searchOpenClose, setSearchOpenClose]=useState(false)
 	const [basketOpenClose,setBasketOpenClose]=useState(false)
-    const {WishList}=useContext(WishListContext)
+    const {WishList}=useContext(WishListContext)   
+	const {searchResult,inpValue,setInpValue}=useContext(GlobalContext)
 	const {t}=useTranslation()
 
 	const {multiLang, onChangeLang}=useContext(LanguageConext)
 	const{onChangeColor,selectValue}=useContext(ColorContext)
 
     const openCloseSearch=()=>{
-		setSearchOpenClose(!searchOpenClose)
+		setSearchOpenClose(!searchOpenClose);
 	}
 	const openCloseBasket=()=>{
 		setBasketOpenClose(!basketOpenClose)
@@ -58,15 +60,24 @@ export default function HeaderRight() {
 
 	<div className={`${style.searchWrapper} ${searchOpenClose ? style.open : ""}`}>
 		<div className={style.searchInpIcon}>
-		<input className={style.searchInp} type="text" placeholder="Search for products" />
+		<input onChange={(e)=>setInpValue(e.target.value)} className={style.searchInp} type="text" placeholder="Search for products" />
 		<IoIosSearch className={style.searchIcon} />
-		</div>
-
+		</div>   
+          <div className={style.searchArea}>
+			{searchResult.map(result=>(
+				<Link onClick={openCloseSearch} to={`/products/${result._id}`} key={result._id} className={style.searchResulWrapper}>
+				    <img className={style.searchPrImg} src={result.images[0].url} alt="" />
+					<h6 className={style.searchPrTitle}>{result.title}</h6>
+					 <p className={style.description}>{result.description}</p>
+					<span className={style.searchPrPrice}>{result.productPrice} $</span>
+				</Link>
+			))}
+		  </div>
 		<div onClick={openCloseSearch} className={style.closeSearch}>
 			<HeaderClose/>
 		</div>
 	</div>
-
+ 
 	<div className={`${style.basket} ${basketOpenClose ? style.open : ""}`}>
 		<div className={style.basketHead}>
 			<h3>SHOPPING CART</h3>

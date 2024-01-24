@@ -7,7 +7,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 1rem;
-
+    
 	.loginRegisterBtn{
 		     background: none;
 			border: none;
@@ -45,8 +45,6 @@
 		font-weight: 700;
 	  }
   }
-
-  
 	.navBasket {
 	  display: flex;
 	  align-items: center;
@@ -55,13 +53,10 @@
 		font-size: 22px;
 		margin-right: 7px;
 	  }
-  
 	  .line {
 		margin: 0 4px;
 	  }
-	
 	}
-  
 	.login {
 	  width: 330px;
 	  position: fixed;
@@ -150,6 +145,45 @@
 			transition: all .5s ease;
 			&:hover{
 				color: white;
+			}
+		}
+	}
+	.searchArea{
+		color: black;
+		background-color: white;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(12rem,1fr));
+		gap: 1rem;
+		text-align: center;
+	    margin: 20px 10px;
+		.searchResulWrapper{
+			border: 1px solid rgb(73, 240, 8);
+			border-radius: 7px;
+			.searchPrImg{
+				width: 100%;
+				aspect-ratio: 1/1;
+				border-radius: 7px;
+				object-fit: cover;
+			}
+			.searchPrTitle{
+				font-size: 1rem;
+               color: black;
+			   display: block;
+			}
+			.description{
+				color: black;
+				text-align: start;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				padding-left: 7px;
+			}
+			.searchPrPrice{
+				font-size: 1rem;
+				color: black;
+				display: block;
 			}
 		}
 	}
@@ -308,6 +342,4 @@
 	  }
 	  }
 	}
-	
-
 }

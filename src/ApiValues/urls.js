@@ -3,6 +3,7 @@
   const urls={
      siteAllProducts:"/site/products",
      siteAllBrends:"/site/brands",
+     siteOneProductData:"/site/products/",
      dashboardBrandsGet:"/dashboard/brands",  
      dashboardBrandsPost:"/dashboard/brands",
      dashboardBrandsDelete:"/dashboard/brands/",

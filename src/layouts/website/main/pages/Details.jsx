@@ -13,12 +13,14 @@ import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import myshop from '../../../../Helpers/MyShop';
 import urls from '../../../../ApiValues/urls';
+import SiteLoading from '../components/SiteLoading';
 
 export default function Details() {
 	   const {_id}=useParams()
 	   const {addToCart} =useContext(BasketContext)
 	   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 	   const [onePrData, setOnePrData]=useState([])
+	   const [loading, setLoading]=useState(true)
 	   useEffect(()=>{
          window.scrollTo(0,0)
 	   },[])
@@ -28,21 +30,25 @@ export default function Details() {
 			try {
 				const resOnePrData = await myshop.api().get(`${urls.siteOneProductData}${_id}`)
 				      setOnePrData(resOnePrData.data.data)
+					  setLoading(false)
 			} catch (error) {
 				console.log(error);
+				setLoading(false)     
 			}
 		}
 
 		useEffect(()=>{
       getOnePrData()
 		},[])
-    console.log("one", onePrData);
+    // console.log("one", onePrData);
 
   return (
-	<section id={style.details}>
+	<>
+	{
+		loading ? <SiteLoading/> :
+		<section id={style.details}>
 		<div  className="container">   
-	    {/* {
-		allProductDatas.filter(item=>item._id == _id).map(product=>( */}
+	   
              <div  className={style.prDetails}>
 			      
 			<div className={style.prDetailsSlider}>
@@ -88,7 +94,7 @@ export default function Details() {
 				<div className={style.prInfo}>
 			    <h2 className={style.prTitle}>{onePrData.title}</h2>
 				   <div className={style.stars}><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /></div>
-				<span className={style.prPrice}>product price: {onePrData.productPrice} $</span>
+				<span className={style.prPrice}>product price: <span className={onePrData.salePrice ? style.prevPriceLine : ""}>{onePrData.productPrice} $</span></span>
            {onePrData.salePrice && <span className={style.salePrice}>product sale price:{onePrData.salePrice} $</span>}
 				<p className={style.prDescription}>{onePrData.description}</p>
 		      <button onClick={()=>addToCart(product)} className={style.addToCartBtn}>ADD TO CART</button>
@@ -98,7 +104,10 @@ export default function Details() {
 		{/* ))
 	 } */}
 		</div>
-	</section>
+	    </section>
+	}
+
+	</>
   )
 }
 

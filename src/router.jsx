@@ -17,6 +17,7 @@ import { UserContext } from "./Contexts/AuthContext";
 import ProtectRoute from "./Helpers/ProtectRoute";
 import AuthRoute from "./Helpers/AuthRoute";
 import NotFound from "./layouts/website/main/pages/NotFound";
+import AllWishList from "./layouts/website/main/pages/AllWishList";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: "all-basket-products",
                 element: <AllBasketProduct />,
+            },
+            {
+                path: "all-wish-list-product",
+                element: <AllWishList />,
             },
             {
                 path: "*",

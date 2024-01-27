@@ -44,7 +44,7 @@ export default function Product() {
 	const getDashboardProduct= async ()=>{
        
 		try {
-			const dashboardProductRes= await myshop.api().get(`${urls.dashboardProductGet}?page=${1}&perPage=${33}&search=${""}`)
+			const dashboardProductRes= await myshop.api().get(`${urls.dashboardProductGet}?page=${1}&perPage=${33n}&search=${""}`)
 			      setDashboardProduct(dashboardProductRes.data.data.product)
                   setLoading(false)
 		} catch (error) {

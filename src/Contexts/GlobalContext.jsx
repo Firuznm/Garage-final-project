@@ -7,6 +7,7 @@ export const GlobalContext=createContext()
 
 export const GlobalProvider=({children})=>{
        const [allProductDatas, setAllProductDatas] = useState([]);
+	//    const [saleProducts, setSaleProducts]=useState([])
 	   const [inpValue,setInpValue]=useState("")
 	   const [loading, setLoading]=useState(true)
   
@@ -24,13 +25,16 @@ export const GlobalProvider=({children})=>{
      getAllProductDatas()
 	},[])
 
+	const SalePracePrList=allProductDatas.filter(prod=> prod.salePrice !== null);
+	
+
 	 const searchResult=allProductDatas.filter(item=>inpValue.toLowerCase()===""? "" : item.title.toLowerCase().includes(inpValue))
   
     console.log("all",allProductDatas);
 	console.log("search", searchResult);
  
 	return (
-		<GlobalContext.Provider  value={{allProductDatas,loading,searchResult,inpValue,setInpValue}}>
+		<GlobalContext.Provider  value={{allProductDatas,loading,searchResult,inpValue,setInpValue, SalePracePrList}}>
 		
 			{children}
 		</GlobalContext.Provider>

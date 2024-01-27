@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	.serachLoginBasketWrapper{
+	.serachLoginBasketWrapper{  
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -214,34 +214,65 @@
 	  justify-content: space-between;
 	  align-items: center;
 	  background-color: black;
-	  padding:  2rem;
+	  padding:  1rem 1rem 0 1rem;
 	}
 	
 	.basketData{
 	  background-color: #111;
 	  padding: 1rem  2rem;
-	  height: 79vh;
+	  height: 86vh;
 	  overflow-y: scroll;
 	   .basketDataWrapper{
        display: flex;
 	   justify-content: space-between;
 	   margin: 20px 0;
+	   border: 1px solid #838383;
+	   padding: 7px;
+	   border-radius: 14px;
+	   .basketPrImg{
+		position: relative;
+	 
 	   img{
 		width: 70px;
 		height: 80px;
 		object-fit: cover;
 		border-radius: 7px;
 	   }
+	   .prCount{
+		position: absolute;
+		top: 2px;
+		left: 3px;
+		width: 33px;
+		height: 33px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #3F51B5;
+		color: white;
+		border-radius: 100%;
+	   }
+	}
 	   .basketContent{
 		text-align: center;
 
 		.basketTitle{
-			font-size: 14px;
+			font-size: 12px;
 			font-weight: 500;
+			margin-bottom: -10px;
 		}
-		.basketPrice{
-         display: inline-block;
-		 margin-top: 10px;
+		.line{
+			width: 80%;
+			display: inline-block;
+			margin: -7px  auto 0;
+			background-color: #bc9c72;
+		}
+		.basketPrice,
+		.basketSalePrice{
+         display: block;
+		 font-size: 12px;
+		}
+		.priceLine{
+			text-decoration: line-through;
 		}
 	   }
 	   .delete{

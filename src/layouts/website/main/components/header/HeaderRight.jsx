@@ -46,16 +46,16 @@ export default function HeaderRight() {
      </Link>
 	<IoIosSearch onClick={openCloseSearch} className={style.searchIcon} />
 
-	<span className={style.wishList}>
+	<Link to="/all-wish-list-product" className={style.wishList}>
 	<FaRegHeart  className={style.heartIcon} /> 
 	 <span className={style.wishListCount}>{WishList.length}</span>
-	</span>   
+	</Link>   
 
 	<div onClick={openCloseBasket}  className={style.navBasket}>
 	<SlBasket  className={style.BasketIcon}/>
 	<span className={style.count}>{BasketItems.length}</span> 
 	<span className={style.line}>/</span>
-	<span className={style.price}>{getBasketTotal()} $</span>
+	<span className={style.price}>{getBasketTotal()} $</span>    
 	</div>
 
 	<div className={`${style.searchWrapper} ${searchOpenClose ? style.open : ""}`}>
@@ -89,10 +89,17 @@ export default function HeaderRight() {
           {
 			BasketItems.map(product=>(
 				<div key={product._id} className={style.basketDataWrapper}>
+					<div className={style.basketPrImg}>
 					<img src={product.images[0].url} alt={product.title} />
+					<span className={style.prCount}>{product.count}</span>
+					</div>
 					<div className={style.basketContent}>
 					<h3 className={style.basketTitle}>{product.title}</h3>
-					<span className={style.basketPrice}>{product.productPrice}</span>
+					<hr className={style.line}/>
+					<div>
+					<span className={style.basketPrice}>Qiymeti:  <span className={product.salePrice ? style.priceLine : ""}>{product.productPrice}$</span></span>
+					{product.salePrice && <span className={style.basketSalePrice}>Endirimli Qiymeti: {product.salePrice}</span>}
+					</div>
 					</div>
 					<span onClick={()=>removeFromBasket(product)} className={style.delete}><FaRegTrashAlt /></span>
 				</div>

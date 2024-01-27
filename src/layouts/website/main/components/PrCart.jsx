@@ -10,17 +10,20 @@ import { useContext } from "react";
 import { BasketContext } from "../../../../Contexts/BasketContext";
 import { WishListContext } from "../../../../Contexts/WishList";
 
-function PrCart({data}) {          
+function PrCart({data}) {              
 	const {addToCart}=useContext(BasketContext)         
 	const {AddWishList, WishList} = useContext(WishListContext)
      
-    const findListItem = WishList.find((item) => item.id === data.id);
+    const findListItem = WishList.find((item) => item._id === data._id);
 
+  
+	 
 
   return (
 	<div className={style.warpperCart}>
 		<Link to={`/products/${data._id}`} className={style.prImg}>
 		<img src={data.images[0].url} alt={data.title} />
+		{/* <span className={style.salePercent}> 100 - (data.salePrice * 100) / data.productPrice</span> */}
 		</Link>
 		
 		<div className={style.prIconListInfo}>
@@ -29,11 +32,12 @@ function PrCart({data}) {
 		<HiMagnifyingGlassPlus className={style.searchIcon}/>
 		<span className={style.heartIcon} onClick={() => AddWishList(data, findListItem)} >{findListItem ? <FaHeart style={{fill:"red"}}/> : <FaRegHeart  />}
 		</span>
-		</div>
+		</div>     
 
 	  <div className={style.prInfo}>
 		<Link  to={`/products/${data._id}`} className={style.prTitle}>{data.title}</Link>
-		<span className={style.prPrice}>{data.productPrice} $</span>
+		<span className={style.prPrice}>Qiymeti : <span className={data.salePrice ? style.prevPrice: "" }>{data.productPrice} $</span></span>
+      	{data.salePrice && <span className={style.prSalePrice}>Endirimli qiymeti : {data.salePrice} $</span>}	
 	  </div>
 	  </div>
 	</div>    

@@ -13,16 +13,20 @@ export const WishListProvider=({children})=>{
 		if (!findWishListItem) {
 		  setWishList((list) => [...list, item]);
 		} else {
-		  setWishList((list) => list.filter((wishlistItem) => wishlistItem.id !== item.id));
+		  setWishList((list) => list.filter((wishlistItem) => wishlistItem._id !== item._id));
 		}
 	  };
+
+	  const wishListPrDelete=(prd)=>{
+		   setWishList((WishList)=>WishList.filter((pr)=> pr._id !== prd._id))
+	}
 
 	useEffect(() => {
 		localStorage.setItem("list", JSON.stringify(WishList));    
 	}, [WishList]);
 
 	return(
-		<WishListContext.Provider value={{ AddWishList, WishList }}>
+		<WishListContext.Provider value={{ AddWishList, WishList,wishListPrDelete }}>
 			{children}
 		</WishListContext.Provider>
 	)

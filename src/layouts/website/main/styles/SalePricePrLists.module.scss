@@ -1,0 +1,13 @@
+#SalePricePrLists{
+	.salePrTitle{
+		text-align: center;
+		margin: 14px 0 40px;
+		color: white;
+		font-size: 2rem;
+	}
+	.SalePricePrListsWrapper{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(17rem,1fr));
+		gap: 1rem;
+	}
+}

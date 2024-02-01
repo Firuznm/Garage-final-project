@@ -6,7 +6,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { MdOutlinePersonOutline } from "react-icons/md";
 // import style
 import style from  "../../styles/HeaderRight.module.scss"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderClose from "./HeaderClose";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -19,13 +19,23 @@ import { ColorContext } from "../../../../../Contexts/ColorContext";
 import { GlobalContext } from "../../../../../Contexts/GlobalContext";
 
 export default function HeaderRight() {
-	const { BasketItems, getBasketTotal,removeFromBasket }=useContext(BasketContext)
+	const { BasketItems, getBasketTotal,getBasketDiscountedTotal, removeFromBasket,	basketModal }=useContext(BasketContext)
 	const [searchOpenClose, setSearchOpenClose]=useState(false)
 	const [basketOpenClose,setBasketOpenClose]=useState(false)
     const {WishList}=useContext(WishListContext)   
-	const {searchResult,setInpValue}=useContext(GlobalContext)
+	const {searchResult,setInpValue,modal,setModal}=useContext(GlobalContext)
 	const {t}=useTranslation()
 
+	const [showTitle, setShowTitle] = useState(true);
+
+	// useEffect(() => {
+	// 	const timeoutId = setTimeout(() => {
+	// 	  setShowTitle(false);
+	// 	}, 1000);
+	
+	// 	return () => clearTimeout(timeoutId);
+	//   }, []); 
+    
 	const {multiLang, onChangeLang}=useContext(LanguageConext)
 	const{onChangeColor,selectValue}=useContext(ColorContext)
 
@@ -36,14 +46,15 @@ export default function HeaderRight() {
 		setBasketOpenClose(!basketOpenClose)
 	}
 	 
+	
   return (
 	<div className={style.navRight}>
 		<div className={style.serachLoginBasketWrapper}>
-	<Link  to={"/login"}
+	{/* <Link  to={"/login"}
 	  className={style.loginRegisterBtn}>
 	 <span className={style.loginRegister}>	{t("Login")} / {t("Register")}</span>
 		<MdOutlinePersonOutline  className={style.person}/>
-     </Link>
+     </Link> */}
 	<IoIosSearch onClick={openCloseSearch} className={style.searchIcon} />
 
 	<Link to="/all-wish-list-product" className={style.wishList}>
@@ -77,7 +88,11 @@ export default function HeaderRight() {
 			<HeaderClose/>
 		</div>
 	</div>
- 
+    
+	{/* {showTitle ? <div>{modal._id}.slice(0,4)</div> : <div>{modal.title}</div>} */}
+	
+      
+
 	<div className={`${style.basket} ${basketOpenClose ? style.open : ""}`}>
 		<div className={style.basketHead}>
 			<h3>SHOPPING CART</h3>
@@ -86,6 +101,8 @@ export default function HeaderRight() {
 			</div>
 		 </div>
           <div className={style.basketData}>
+			<span className={style.prevPrice}>Əvvəlki cəmi qiyməti : {getBasketTotal()} $</span> 
+			<span className={style.dicountedPrice}>Endirimli cəmi qiyməti : {getBasketDiscountedTotal()} $</span>
           {
 			BasketItems.map(product=>(
 				<div key={product._id} className={style.basketDataWrapper}>

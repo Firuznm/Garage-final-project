@@ -7,7 +7,7 @@ import { ReadOurMagazineDatas} from "../../MyWriteDatas/myDatas"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Autoplay} from 'swiper/modules';
+import { Autoplay} from 'swiper/modules';     
 function ReadOurMagazine() {
   return (
 	<section id={style.readMagazine}>
@@ -26,14 +26,22 @@ function ReadOurMagazine() {
         }}
 		modules={[Autoplay]}
 		breakpoints={{
-			600: {
+			650: {
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+			  },
+			880: {
 			  slidesPerView: 2,
 			  spaceBetween: 20,
 			},
-			950: {
-			  slidesPerView: 3,
+			1050: {
+			  slidesPerView: 2.2,
 			  spaceBetween: 40,
 			},
+			1250: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			  },
 		  }}
 
         className={style.mySwiper}

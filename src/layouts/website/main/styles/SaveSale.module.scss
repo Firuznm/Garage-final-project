@@ -9,6 +9,8 @@
 		position: relative;
       .content{
 		height: 90vh;
+		width: 80%;
+		margin: 0 auto;
 	    display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -16,27 +18,30 @@
 		color:  $saveSale-write-color;
 		.italicTitle{
 			font-family: veryItalicFont;
-			font-size: 85px;
+			font-size: 55px;
             font-weight: 200;
 		}
 		.title{
             font-family: lessItalicMetaFont;
-			font-size: 85px;
+			font-size: 55px;
 			font-weight: 200;
+			text-align: center;
 		}
 		.description{
 			font-family: normalOpenFont;
-			font-size: 20px;
-			margin:15px 0 44px;
+			font-size: 15px;
+		   padding: 14px;
+		   margin-bottom: 30px;
+		   text-align: center;
+		   line-height: 25px;
 		}
 		.signUp{
 		   display: flex;
-           margin: 15px 0;
+           margin: 0 auto;
 		   color: $signUp-color;
 		 .inp{
 			font-size: 20px;
 			border-bottom: 3px solid $signUp-color;
-			width: 450px;
 			display: flex;
 		    align-items: center;
 		   .email{
@@ -50,10 +55,10 @@
 		   }
 		}
 		   .signUpBtn{
-			background-color: $signUp-btn-bg-color;
-			color: $signUp-btn-color;
-			font-size: 17px;
-			padding: 18px 65px;
+			background-color: #000;
+			color: #fff;
+			font-size: 15px;
+			padding: 8px 37px;
 			margin-left: 14px;
 			border: none;
 			cursor: pointer;
@@ -84,17 +89,19 @@
 				text-align: center;
 			}
 			.signUp{
+				margin: 0;
 			 .inp{
-				font-size: 20px;
-				width: 200px;
+				font-size: 15px;
 			   .email{
-				font-size: 18px;
+				font-size: 14px;
 			   }
 			}
 			   .signUpBtn{
-				font-size: 14px;
-				padding: 5px 12px;
+				font-size: 12px;
+				width: 65px;
+                height: 33px;
 				margin-left: 8px;
+				padding: 0;
 			   }
 			}
 	

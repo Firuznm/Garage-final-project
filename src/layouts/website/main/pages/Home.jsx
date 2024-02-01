@@ -20,21 +20,23 @@ export default function Home() {
 	},[])
   return (
  <>
- {
-	loading ? <SiteLoading/> : 
+  {
+	loading ? <SiteLoading/> :  
      <>
+
+	 <ReklamLeft/>
 	  <MainSwiperSlider/>
 	  <SalePricePrLists/>
       <CustomSubtitle/>
 	  <NewProducts/>
 	  <SaveSale/>
 	  <ReadOurMagazine/>
-	 
 	  <ClientsOpinions/>
 	  <OurBrends/>
 	  <OurPartners/>
+	  <ReklamRight/>
 	</>
- }
+  } 
 	</>
   )
 }

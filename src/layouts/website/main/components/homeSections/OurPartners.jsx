@@ -5,7 +5,7 @@ import { OurPartnersImgList, OurPartnersInfoData } from "../../MyWriteDatas/myDa
 import TitleList from "../TitleList"
 import { Link } from "react-router-dom"
 import Fancybox from "../Fancy"
-
+   
 export default function OurPartners() {
   return (
 	<section id={style.OurPartners}>

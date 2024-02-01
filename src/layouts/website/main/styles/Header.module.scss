@@ -6,6 +6,7 @@
 	// top: -1px;
 	left: 0;
 	z-index: 999;
+
 	// -webkit-transform: translate3d(0,0,0);
 	// transform: translate3d(0,0,0);
 		.nav{
@@ -31,22 +32,22 @@
 			  }
 	}
 		
-		.header{	
-			.navBlack{
-				// background-color: black;
-				height: 90px;
-	          	}
-			}
+		// .header{	
+		// 	.navBlack{
+		// 		// background-color: black;
+		// 		height: 90px;
+	    //       	}
+		// 	}
 
 
 // ====  Header  ===== section responsive 900px
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1150px) {
 	.header{
-		background-color: black;
+		background-color: black;    
 		.nav{
 			.logoHamburgerMenuWrapper{
 			.hamburgerMenu{
-				display: block;
+				display: block;   
 				font-size: 28px;
 				cursor: pointer;
 				margin-top: 5px;
@@ -58,7 +59,7 @@
 		}
 			  }
 				}
-				.navBlack{
-					height: 100px;
-				}
+				// .navBlack{
+				// 	height: 100px;
+				// }
 }

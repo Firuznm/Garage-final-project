@@ -34,8 +34,9 @@ export default function HeaderCenter({menu}) {
   return (    
 	<div className={style.headercenterWrapper}>
 	  <ul className={`${style.navPages} ${menu ? style.close : ""}`}>
-					<li  className={style.homeLi}> <a className={style.homeLink} href="/">{t("home")}</a><IoIosArrowDown  className={style.arrowIcon}/>
-				
+					<li  className={style.homeLi}> 
+					<a className={style.homeLink} href="/">{t("home")}</a>
+					<IoIosArrowDown  className={style.arrowIcon}/>
 					</li>
 					<li  onClick={onClickOpenClose} className={style.shopLi}>{t("shop")}
 					<IoIosArrowDown  className={style.arrowIcon}/>

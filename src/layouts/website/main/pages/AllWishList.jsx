@@ -15,7 +15,7 @@ export default function AllWishList() {
         
   return (
 	<section id={style.AllWishList}>
-		<div className="container">
+		<div style={{maxWidth:"100%"}} className="container">
 		<h2 className={style.AllWishListHeader}> All Wish List </h2>
 
 	   {WishList.length === 0 ?  <div className={style.freeWishList}>Wish liste product yoxdur</div> : 

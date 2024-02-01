@@ -26,7 +26,7 @@
 					}
 					.sliderTitle{
 					font-family: lessItalicMetaFont;
-					font-size: 65px;
+					font-size: 55px;
 					font-weight: 400;
 					margin: 1.4rem 0 1rem;
 					}
@@ -43,7 +43,7 @@
 
 
 // ====  MainSwiperSlider  ===== section responsive start
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1150px) {
 	#MainSwiperSlider{
 		margin-top: 0;
 			.mainSwiperSliderText{

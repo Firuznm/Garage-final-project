@@ -17,7 +17,7 @@ export default function AllBasketProduct() {
 	 
   return (
 	<section id={style.AllBasketProduct}>
-		<div className="container">
+		<div style={{maxWidth:"100%"}} className="container">
 		{
 		  BasketItems.length === 0 ? <div className={style.noBasketPr}>Səbətdə məhsul yoxdur <BsBasket /></div> :
 			<div className={style.AllBasketProductWrapper}>

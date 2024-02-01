@@ -20,7 +20,7 @@ function SaveSale() {
 				</form>
 			</div>
 		</div>   
-		</div>
+		</div>   
 	</section>
   )
 }

@@ -5,9 +5,9 @@
 		.partnersWrapper{
 			display: flex;
 			gap: 2rem;
-			padding: 0 10px;
+			padding: 0 10px;   
 			.partnersImg{
-				width: 47%;
+				width: 65%;
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 			    gap: 1rem;

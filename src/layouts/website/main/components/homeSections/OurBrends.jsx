@@ -16,7 +16,7 @@ export default function OurBrends() {
 	   const getBrendsData= async ()=>{
 		try {
 			const brendsDataRes= await myshop.api().get(urls.siteAllBrends)
-			setAllBrendsData(brendsDataRes.data.data)
+			setAllBrendsData(brendsDataRes.data.data)    
 		} catch (error) {
 			console.log(error);
 		}
@@ -61,7 +61,7 @@ export default function OurBrends() {
 				}
 			  },
 			{
-			  breakpoint: 1000,
+			  breakpoint: 900,
 			  settings: {
 				slidesToShow: 2.5, 
 			  }
@@ -73,7 +73,7 @@ export default function OurBrends() {
 				}
 			  },
 			{
-			  breakpoint: 700,
+			  breakpoint: 750,
 			  settings: {
 				slidesToShow: 3.5,   
 			  }
@@ -81,13 +81,19 @@ export default function OurBrends() {
 			{
 				breakpoint: 580,
 				settings: {
-				  slidesToShow: 2.5,     
+				  slidesToShow: 2,     
 				}
 			  },
 			  {
 				breakpoint: 430,
 				settings: {
 				  slidesToShow: 1.5,     
+				}
+			  },
+			  {
+				breakpoint: 350,
+				settings: {
+				  slidesToShow: 1.2,     
 				}
 			  }
 		      ]		

@@ -8,7 +8,7 @@
 			padding: 0 10px;
 			.sliderConten{
 				margin-top: 30px;    
-				height: 370px;
+				height: 300px;
 				overflow: hidden;
 				cursor: pointer;
 				position: relative;
@@ -28,39 +28,36 @@
 					.contentTitle{
                      color: $custom-slider-content-title-color;
 					 font-family: veryItalicFont;
-					 font-size: 40px;
+					 font-size: 28px;
 					 font-weight: 100;
+					 line-height: 28px;
 					}
 					.productTitle{
                         color: $custom-slider-product-title-color;
 						font-family: lessItalicMetaFont;
-						font-size: 28px;
+						font-size: 20px;
 						font-weight: 300;
 						margin: 10px 0;
 					}
-					.priceBtn{
-						display: flex;
-						flex-wrap: wrap;
-						align-items: center;
-						gap: 15px;
 					.productPrice{
                         color: $custom-slider-product-price-color;
-                        font-size: 40px;
-						margin-right: 20px;
+                        font-size: 30px;
+						display: block;
+						margin-bottom: 14px;
 					}
 				}
 				}
 			}
 		}
-	}
 
 
 // ==== costumSubtitle  ===== section responsive start
+// @media only screen and (max-width: 540px) {
 @media only screen and (max-width: 540px) {
 	#costumSubtitle{
 			.subtitleSlider{
 				.sliderConten{
-					height: 210px;
+					height: 280px;
 					img{
 						height: 80%;
 					}
@@ -68,13 +65,12 @@
 						top: 10%;
 						left: 30px;
 						.contentTitle{
-						 font-size: 30px;
+						 font-size: 25px;
 						}
 						.productTitle{
-							font-size: 25px;
+							font-size: 20px;
 							margin: 5px 0;
 						}
-						.priceBtn{
 						.productPrice{
 							font-size: 20px;
 						}
@@ -83,4 +79,3 @@
 				}
 			}
 		}
-}

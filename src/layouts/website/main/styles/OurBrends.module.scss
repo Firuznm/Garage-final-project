@@ -1,32 +1,32 @@
 @import "../../../../colorsUsedSite/allColors.scss";
 
 #OurBrends{
-	background-color: $OurBrends-section-bg-color;
 	color: $OurBrends-section-color;
+	margin: auto 0;
+
 		.OurBrendsWrapper{
          display: flex;
 		 justify-content: space-between;
-		 align-items: center;
-		 font-size: 40px;
+		 font-size: 22px;
 		 font-family: normalOpenFont;
 		 height: 70px;
+		 padding: 0 10px;
 		 .title{
-			width: 16rem;
-			font-size: 40px;
+			width: 9rem;
+			font-size: 22px;
 			font-weight: 100;
             font-family: lessItalicMetaFont;
 		 }
 		 .brendsLine{
 			width: 1px;
-			height: 45px;
+			height: 30px;
 			margin: 0 7px;
 			background-color: $OurBrends-section-brendsLine-bg-color;
 			border: none;
 		 }
 		 .OurBrendsSlider{
-		    width: calc(100% - 17rem);
+		    width: calc(100% - 10rem);
 			font-family: normalOpenFont;
-			
 		 }
 		}
 	}
@@ -36,7 +36,7 @@
 	#OurBrends{
 			.OurBrendsWrapper{
 			 font-size: 18px;
-			 height: 70px;
+			 align-items: center;
 			 .title{
 				width: 8rem;
 				font-size: 20px;

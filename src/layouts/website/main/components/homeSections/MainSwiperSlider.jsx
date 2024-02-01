@@ -38,7 +38,7 @@ function MainSwiperSlider() {
         modules={[EffectFade,Autoplay,  Navigation,]}
         className="mySwiper"
       >
-        
+             
 		{
 			MainSwiperSliderDatas.map(data=>(
 				<SwiperSlide key={data.id}>    

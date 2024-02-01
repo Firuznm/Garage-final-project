@@ -17,16 +17,16 @@ function Header() {
 	}
 
 
-	const navColorChange=()=>{
-		if(window.scrollY > 80){
-			setNavColor(true)
-		}
-		else{
-			setNavColor(false) 
-		}
-	}
+	// const navColorChange=()=>{
+	// 	if(window.scrollY > 80){
+	// 		setNavColor(true)
+	// 	}
+	// 	else{
+	// 		setNavColor(false) 
+	// 	}
+	// }
 
-	window.addEventListener("scroll", navColorChange)   
+	// window.addEventListener("scroll", navColorChange)   
 
 	// const callbackFunction = ([e]) => {
 	// 	if(e.intersectionRatio < 1) setNavColor(true)
@@ -47,10 +47,10 @@ function Header() {
 	 
   return (
 	<section className={style.header}>
-		<div style={{padding: 0,}} className="container">
+		<div style={{maxWidth:"1500px", padding:"0",}} className="container">
 			<div 
 			// ref={headerRef}
-			 className={`${style.nav} ${navColor ? style.navBlack : ""}`}>
+			 className={style.nav}>
 				<div  className={style.logoHamburgerMenuWrapper}>
 				<span onClick={onClickOpenCloseMenu} className={style.hamburgerMenu}><RxHamburgerMenu /></span>
 				<a href="/" className={style.navLogo}>{t("myShop")}</a>

@@ -47,7 +47,7 @@ export default function Details() {
 	{
 		loading ? <SiteLoading/> :
 		<section id={style.details}>
-		<div  className="container">   
+		<div style={{maxWidth:"100%"}} className="container">   
 	   
              <div  className={style.prDetails}>
 			      
@@ -97,7 +97,7 @@ export default function Details() {
 				<span className={style.prPrice}>product price: <span className={onePrData.salePrice ? style.prevPriceLine : ""}>{onePrData.productPrice} $</span></span>
            {onePrData.salePrice && <span className={style.salePrice}>product sale price:{onePrData.salePrice} $</span>}
 				<p className={style.prDescription}>{onePrData.description}</p>
-		      <button onClick={()=>addToCart(product)} className={style.addToCartBtn}>ADD TO CART</button>
+		      <button onClick={()=>addToCart(onePrData)} className={style.addToCartBtn}>ADD TO CART</button>
 		      <button className={style.buyItNow}>BUY IT NOW</button>
 			   </div>
 			</div>

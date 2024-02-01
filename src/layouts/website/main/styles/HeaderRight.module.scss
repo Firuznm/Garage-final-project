@@ -195,6 +195,26 @@
 
 	}
    }
+   .CustomModalBasketWishListWrapper{
+	width: 100px;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	color: white;
+	border-radius: 14px;
+	img{
+		width: 50px;
+		height: 50px;
+		object-fit: cover;
+		border-radius: 7px;
+	}
+	h2{
+		font-size: 14px;
+
+	}
+}
    .basket {
 	width: 330px;
 	position: fixed;
@@ -222,6 +242,11 @@
 	  padding: 1rem  2rem;
 	  height: 86vh;
 	  overflow-y: scroll;
+	  .prevPrice,
+	  .dicountedPrice{
+		display: block;
+		font-size: 14px;
+	  }
 	   .basketDataWrapper{
        display: flex;
 	   justify-content: space-between;

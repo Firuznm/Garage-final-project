@@ -10,7 +10,7 @@ import { useContext } from "react"
 import { GlobalContext } from "../../../../../Contexts/GlobalContext"
 
 function NewProducts() {
-	const {t}=useTranslation()
+	const {t}=useTranslation()   
 	const {allProductDatas}=useContext(GlobalContext)
   return (
 	<section id={style.newProducts}>

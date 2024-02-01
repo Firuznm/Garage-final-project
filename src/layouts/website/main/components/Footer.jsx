@@ -8,7 +8,7 @@ import { FooterStoreDatas } from "../MyWriteDatas/myDatas"
 export default function Footer() {
   return (
 	<section id={style.footer}>
-		<div className="container">
+		<div style={{ maxWidth:"1500px"}} className="container">
 			<div className={style.footerWrapper}>
 				<div className={style.footerPages}>
 					{FooterPagesDatas.map(item=>(

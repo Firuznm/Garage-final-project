@@ -14,7 +14,7 @@ import Button from "../Button";
 // react icons import
 import { BsArrowLeft } from 'react-icons/bs';
 import { BsArrowRight } from 'react-icons/bs';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";   
 
 function CustomSubtitle() {   
     const {t}=useTranslation()
@@ -36,10 +36,14 @@ function CustomSubtitle() {
           clickable: true,
         }}
 		breakpoints={{
-			900: {
-			  slidesPerView: 2,
+			980: {
+			  slidesPerView: 1.5,
 			  spaceBetween: 20,
-			}
+			},
+			1300: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			  }
 		  }}
         modules={[Pagination,Navigation]}
         className={style.mySwiper}
@@ -53,10 +57,8 @@ function CustomSubtitle() {
 						<div className={style.sliderContent}>
 							<h5 className={style.contentTitle}>{t("yellowTitle")}</h5>
 							<h3 className={style.productTitle}>{item.title}</h3>
-							<div className={style.priceBtn}>
 							<span className={style.productPrice}>Â£{item.price}</span>
 							<Button title={t("shopNow")}/>
-							</div>
 						</div>
 					</div>
 				</SwiperSlide>
